@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.full-height {
+  min-height: calc(100vh - 70px - 100px); // 100vh height of screen ,
+  // 70 px is height of header, 100px height of footer. COuld've been 170
+}
