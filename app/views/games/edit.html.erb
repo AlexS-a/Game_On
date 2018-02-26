@@ -1,0 +1,11 @@
+<h1>Edit your game rental</h1>
+
+<%= simple_form_for @game do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :genre %>
+  <%= f.input :location %>
+  <%= f.input :platform %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
