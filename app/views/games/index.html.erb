@@ -1,0 +1,13 @@
+<h1>Search results</h1>
+
+<ul>
+  <% @games.each do |game| %>
+  <li>
+    <%=link_to game.name, game_path(game) %>
+    <%= game.genre %>
+    <%= game.location %>
+    <%= game.price %>
+  </li>
+  <% end %>
+</ul>
+
