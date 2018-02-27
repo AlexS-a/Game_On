@@ -4,3 +4,7 @@
 <p><%= @booking.rent_end %></p>
 <p><%= @booking.game.price %></p>
 <p><%= @booking.user.user_name %></p>
+
+
+<%= link_to "Back to your bookings", bookings_path %>
+<%= link_to "edit your booking", edit_game_booking_path(@booking) %>
