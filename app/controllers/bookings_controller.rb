@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.status = "pending"
     @game = Game.find(params[:game_id])
     @booking.game = @game
     authorize @booking
@@ -46,7 +47,6 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
     authorize @booking
   end
-
 
   private
 

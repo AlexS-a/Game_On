@@ -2,11 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-
   def show
     authorize @user
-    @user2 = current_user
-
   end
 
   def edit

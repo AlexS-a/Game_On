@@ -1,5 +1,4 @@
-<h1><%= @user.email %></h1>
-<h2><%= @user.user_name %></h2>
+<h1><%= @user.user_name %></h1>
 
 <h3>These are your game up for rent</h3>
 <ul>
@@ -10,13 +9,15 @@
   <% end %>
 </ul>
 
-<% if @user2 == @user %>
+<% if @user == current_user %>
 <h3>People who have sent you a booking request</h3>
 <ul>
-  <% @user.bookings.each do |booking| %>
+  <% @user.games.each do |game| %>
+    <% game.bookings.each do |booking| %>
   <li>
-     <p><%= link_to booking.user.user_name, user_path(booking.user) %> would like to book <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %> </p>
+    <p> <%=link_to booking.user.user_name, user_path(@user) %> whats to rent <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %> status: <%= booking.status %> <%= booking.accept_booking %> </p>
   </li>
+  <% end %>
   <% end %>
 </ul>
 <% end %>
