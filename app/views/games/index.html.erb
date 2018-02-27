@@ -1,13 +1,41 @@
-<h1>Search results</h1>
 
-<ul>
-  <% @games.each do |game| %>
-  <li>
-    <%=link_to game.name, game_path(game) %>
-    <%= game.genre %>
-    <%= game.location %>
-    <%= game.price %>
-  </li>
+<div class="title">
+  <h1>Search results</h1>
+</div>
+
+<div class ="detailed-form">
+  <%= form_tag games_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= text_field_tag :search_location, params[:search_location] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
   <% end %>
-</ul>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @games.each do |game| %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="card">
+          <div class="card-description">
+            <%= image_tag game.photo %>
+            <h1><%= game.name %></h1>
+            <h6>Genre: <%= game.genre %></h6>
+            <h5><%= game.platform %></h6>
+            <h2>£<%= game.price %>/pw</h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 

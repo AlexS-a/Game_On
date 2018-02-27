@@ -2,10 +2,10 @@
 
 <ul>
 <% @bookings.each do |booking| %>
-
   <li>
     <%= link_to booking.game.name, booking_path(booking) %>
   </li>
-
 <% end %>
 </ul>
+
+<%= link_to "To games search page", games_path %>
