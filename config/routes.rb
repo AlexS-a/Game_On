@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :games do
-    resources :bookings, except: [:show, :index]
+    resources :bookings, except: [:index, :show]
   end
 
   resources :bookings, only: [:index, :show]
