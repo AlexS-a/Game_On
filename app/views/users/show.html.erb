@@ -1,1 +1,22 @@
-hi
+<h1><%= @user.email %></h1>
+<h2><%= @user.user_name %></h2>
+
+<h3>These are your game up for rent</h3>
+<ul>
+  <% @user.games.each do |game| %>
+  <li>
+    <p><%= game.name %></p>
+  </li>
+  <% end %>
+</ul>
+
+<% if @user2 == @user %>
+<h3>People who have sent you a booking request</h3>
+<ul>
+  <% @user.bookings.each do |booking| %>
+  <li>
+     <p><%= link_to booking.user.user_name, user_path(booking.user) %> would like to book <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %> </p>
+  </li>
+  <% end %>
+</ul>
+<% end %>
