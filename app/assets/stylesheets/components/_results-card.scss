@@ -1,0 +1,90 @@
+.card {
+  height: 300px;
+  width: 500px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  //background-image: url("http://images.all-free-download.com/images/graphiclarge/cocktail_of_highdefinition_picture_five_166470.jpg");
+  background-size: cover;
+  background-color: white;
+  color: black;
+  // position: relative;
+  border: 1px solid rgba(0,0,0,0.2);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  box-shadow: 2px 3px 4px rgba(0,0,0,0.2);
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+
+i{
+  font-size: 25px;
+  opacity: 0.5px;
+}
+.card-description {
+  h2{
+    position: absolute;
+    top: 119px;
+    right: 177px;
+    color: black;
+    font-size: 30px;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  h1{
+    position: absolute;
+    top: 16px;
+    right: 177px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  h6{
+    position: absolute;
+    right: 169px;
+    top: 73px;
+    font-size: 20px;
+  }
+  img{
+    height: 289px;
+    width: 239px;
+    padding: 21px;
+    position: absolute;
+    top: 14px;
+  }
+  h5{
+    position: absolute;
+    top: 105px;
+    right: 210px;
+  }
+}
+
+.fas {
+  position: absolute;
+  right: 17px;
+  bottom: 13px;
+  color: white;
+  opacity: 0.5;
+  &:hover{
+    opacity: 1;
+    color: black;
+  }
+}
+
+.card-link{
+  background-color: transparent;
+  height: 300px;
+  width: 400px;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  left: 0;
+
+}
+
+a {
+  text-decoration: none !important;
+}
