@@ -17,13 +17,17 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to root, :notice => "Your patient has been deleted"
+    redirect_to root, :notice: "The user has been deleted"
   end
 
   private
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password, :user_name)
   end
 
 end
