@@ -8,11 +8,11 @@ class Booking < ApplicationRecord
   validates :status, inclusion: {in: %w(pending, declined, accepted)}
 
 
-  def self.accept_booking
-    booking.status = "accepted"
+  def accept_booking
+    self.status = "accepted"
   end
 
-  def self.declined_booking
-    booking.status = "declined"
+  def declined_booking
+    self.status = "declined"
   end
 end
