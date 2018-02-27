@@ -8,13 +8,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to users_path(@user)
+    if (@user.update(user_params))
+      redirect_to users_path(@user)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
     @user.destroy
-    redirect_to root
+    redirect_to root, :notice => "Your patient has been deleted"
   end
 
   private
