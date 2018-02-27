@@ -24,7 +24,7 @@ counter = 1
 end
 
 10.times do
-  Game.create!(
+  game = Game.new(
     name: Faker::Pokemon.name,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -33,7 +33,9 @@ end
     platform: ["PS4", "XB1", "Steam"].sample,
     price: (1..6).to_a.sample,
     user_id: (1..10).to_a.sample,
-    photo: url
     )
+  game.remote_photo_url = url
+  game.save
+  sleep(3)
   # game.remote_photo_url = url
 end
