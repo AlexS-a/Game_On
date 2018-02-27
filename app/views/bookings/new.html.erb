@@ -1,0 +1,7 @@
+<h1>Crerate a booking for @game</h1>
+
+<%= simple_form_for [@game, @booking] do |f| %>
+  <%= f.input :rent_start %>
+  <%= f.input :rent_end %>
+  <%= f.button :submit %>
+<% end %>
