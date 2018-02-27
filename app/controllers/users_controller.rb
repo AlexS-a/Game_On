@@ -2,12 +2,15 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
+    authorize @user
   end
 
   def edit
+    authorize @user
   end
 
   def update
+    authorize @user
     if (@user.update(user_params))
       redirect_to users_path(@user)
     else
@@ -17,7 +20,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to root, :notice: "The user has been deleted"
+    authorize @user
+    redirect_to root_path, notice: "The user has been deleted"
   end
 
   private
