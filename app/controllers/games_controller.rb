@@ -27,7 +27,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user = current_user
     authorize @game
-    if @game.save!
+    if @game.save
       redirect_to game_path(@game)
     else
       render :new
@@ -56,6 +56,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :description, :genre, :location, :platform, :price)
+    params.require(:game).permit(:name, :description, :genre, :location, :platform, :price, :photo)
   end
 end

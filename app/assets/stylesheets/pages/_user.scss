@@ -1,0 +1,91 @@
+.container{
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.background-banner{
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.55));
+  background-size: fixed;
+  border-radius: 25px;
+  height: 50vh;
+  margin: 25px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.img-responsive{
+  border-radius: 150px;
+  padding-top: 10px;
+}
+
+.slideshow-images{
+  padding-left: 0px;
+}
+
+.panel-dark, .panel-header {
+  background-color: #edefed;
+  border-top: 0;
+}
+.panel-header {
+  position: relative;
+  color: #484848;
+  font-size: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dce0e0;
+  margin: 0;
+  padding: 20px;
+  border-top: 1px solid #dce0e0;
+}
+ul.panel-body>li, ol.panel-body>li {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border-top: 1px solid #dce0e0;
+}
+.panel-body {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border-top: 0px;
+}
+
+dl{
+  margin-bottom: 1px;
+}
+
+.col-lg-12 {
+  width: 100%;
+  float: left;
+}
+
+.col-md-8 {
+  width: 66.66667%;
+  float: left;
+}
+
+.space-top-2 {
+  margin-top: 12px;
+}
+h5, .h5 {
+  font-size: 16px;
+  font-weight: bold;
+  text-display: inline;
+}
+
+.for-rent {
+  margin: 10px;
+}
+
+.games-for-sale{
+  width: 260px;
+  object-fit: cover;
+}
+
+.borderlands{
+  height: 150px;
+}

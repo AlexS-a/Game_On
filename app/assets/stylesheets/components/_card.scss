@@ -1,0 +1,42 @@
+.recent {
+  margin-top: 100px;
+  margin: 30px;
+  padding-top: 50px;
+  border-top: solid;
+  border-color: #d1cfe2;
+  margin-bottom: 100px;
+}
+
+.card {
+  width: 330px;
+  height: 230px;
+  margin: 10px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.card :hover{
+    opacity: 0.7;
+  }
+
+.card-body {
+  height: 180px;
+  background-size: cover;
+  color: #d1cfe2;
+  position: relative;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card-footer p {
+  color: #d1cfe2;
+  opacity: 0.9;
+  font-weight: lighter;
+  font-size: 12px;
+}

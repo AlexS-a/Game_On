@@ -1,3 +1,4 @@
+
 <h1><%= @user.user_name %></h1>
 <h2><%= @user.description %> </h2>
 <%= link_to "Edit your description", edit_user_path(@user) if @user == current_user %>
@@ -31,3 +32,84 @@
 
 
 <%= link_to "Edit", edit_user_registration_path(@user) if @user == current_user%>
+=======
+<div class="container">
+  <div class="col-lg-3 col-md-4 hide-sm">
+   <div id="user" class="space-4 ">
+      <div>
+        <div class="space-2" id="user-media-container">
+          <div id="slideshow" class="slideshow">
+            <div class="slideshow-preload"></div>
+            <ul class="slideshow-images">
+              <li class="active media-photo media-photo-block">
+                <img alt="Profile-Picture" class="img-responsive" height="225" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" title="Profile-Picture" width="225">
+              </li>
+              <li class="media-photo media-photo-block"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+   </div>
+      <div class="panel space-4">
+      <div class="panel-header">
+        About Me
+      </div>
+      <div class="panel-body">
+        <ul class="list-unstyled space-3" title="Verified info">
+          <li class="row row-table space-2">
+            <div class="panel-body">
+              <div class="col-12 col-middle">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ex nam, quo numquam, autem quia magnam aperiam accusantium, recusandae id asperiores tempore saepe dolores illo fugiat, iure consequuntur dolorum nesciunt!
+              </div>
+            </div>
+        </ul>
+
+        <a href="/help/article/1237">
+          Learn more »
+        </a>
+      </div>
+      </div>
+
+      <div class="panel space-4">
+        <div class="panel-header">
+          Follow me
+        </div>
+        <div class="panel-body">
+          <dl>
+            <dt>All social media</dt>
+            <dd>Facebook</dd>
+            <dd>Twitter</dd>
+            <dd>Instagram</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="panel space-4">
+        <div class="panel-header">
+          Come to my house
+        </div>
+        <div class="panel-body">
+          <dl>
+            <dt>Location</dt>
+            <dd>Hoxton, London, United Kingdom</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-8 col-sm-12">
+
+          <div class="h5 space-top-2">
+            <h1>User name</h1>
+            <span class="text-normal">
+              Joined in April 20th 2004
+            </span>
+          </div>
+        <h1 class="for-rent">Games For Rent</h1>
+     <div class="games-for-sale">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/71TVIyL5P8L._SL1024_.jpg" class="borderlands" alt="Borderlands 2">
+     </div>
+  </div>
+</div>
+
+
+

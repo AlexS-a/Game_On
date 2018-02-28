@@ -8,6 +8,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
+gem 'carrierwave', '~>1.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -18,6 +19,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 gem "pundit"
+gem 'cloudinary'
 
 
 group :development do
