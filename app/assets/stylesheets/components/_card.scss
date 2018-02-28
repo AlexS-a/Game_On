@@ -21,6 +21,8 @@
   color: #d1cfe2;
   position: relative;
   background-image: radial-gradient(#FFF, #000);
+  &:hover{
+  opacity: 0.7;
 }
 
 .card-category {
