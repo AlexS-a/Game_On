@@ -1,18 +1,23 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :create, :update, :destroy]
-
-  def index
-    @users = User.all
-  end
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
   end
 
   def update
+    if (@user.update(user_params))
+      redirect_to users_path(@user)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to root, :notice: "The user has been deleted"
   end
 
   private
@@ -22,6 +27,9 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :password, :user_name)
   end
+
 end
+
+

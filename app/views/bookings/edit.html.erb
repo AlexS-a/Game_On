@@ -1,0 +1,9 @@
+<h1>Edit booking for <%= @game.name.capitalize %></h1>
+
+<%= simple_form_for [@game, @booking] do |f| %>
+  <%= f.input :rent_start %>
+  <%= f.input :rent_end %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Back to your booking", booking_path(@booking) %>

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
+  devise_for :users
+  resources :games do
+    resources :bookings, except: [:index, :show]
+
+  end
+
+  resources :bookings, only: [:index, :show]
   root to: 'pages#home'
 
   resources :users, only: [:show]

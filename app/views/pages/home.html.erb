@@ -1,2 +1,77 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Home page</h1>
+=======
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path("Video_gamers_on_couch.jpg",
+      width: 300, height: 300, crop: :thumb) %>)">
+  <div class="banner-content">
+    <h1>Game On</h1>
+    <h3>Rent, Play, Complete, Repeat</h3>
+    <a class="btn btn-primary btn-lg">Sign Up</a>
+  </div>
+</div>
+
+
+<div class="container text-center">
+ <div class="flex">
+   <h2 class="text-center">Search for your next game?</h2>
+      <div class="search">
+        <%= form_tag games_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Go", :name => nil %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="recent">
+<h2 class="text-center">Check out our most popular games...</h2>
+  <div class="container">
+    <div class="row">
+      <div class="cards">
+
+
+        <div class="card">
+          <div class="card-body" style="background-image: url(<%= image_path("GTA.jpg",
+        width: 300, height: 300, crop: :thumb) %>)">
+              <a class="card-link" href="#"></a>
+              <!-- <span class="card-category">GTA V</span> -->
+            </div>
+            <div class="card-footer">
+              <p>XBOX One</p>
+              <p>£5 per month</p>
+              <p>Posted on 25/04/13</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body" style="background-image: url(<%= image_path("diablo.jpg",
+        width: 300, height: 300, crop: :thumb) %>)">
+              <!-- <span class="card-category">Diablo III</span> -->
+              <a class="card-link" href="#"></a>
+            </div>
+            <div class="card-footer">
+              <p>PC</p>
+              <p>£5 per week</p>
+              <p>Posted on 01/02/18</p>
+            </div>
+          </div>
+
+        <div class="card">
+          <div class="card-body" style="background-image: url(<%= image_path("FIFA.jpg",
+      width: 300, height: 300, crop: :thumb) %>)">
+            <!-- <span class="card-category">FIFA 2018</span> -->
+            <a class="card-link" href="#"></a>
+          </div>
+          <div class="card-footer">
+            <p>PS4</p>
+            <p>£10 per week</p>
+            <p>Posted on 16/01/18</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
