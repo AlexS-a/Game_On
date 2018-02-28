@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   validates :rent_end, presence: true
   validates :game_id, presence: true
   validates :user_id, presence: true
-  validates :status, inclusion: {in: %w(pending, declined, accepted)}
+  validates :status, inclusion: {in: ["pending", "declined", "accepted"]}
 
 
   def accept_booking

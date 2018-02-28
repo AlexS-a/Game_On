@@ -1,11 +1,13 @@
 <h1>Here are all of your bookings</h1>
 
 <ul>
-<% @bookings.each do |booking| %>
+  <% current_user.bookings.each do |booking| %>
   <li>
-    <p><%= link_to booking.game.name, booking_path(booking) %> <%= booking.status %> </p>
+    <p><%= link_to booking.game.name, booking_path(booking) %></p>
   </li>
-<% end %>
+  <% end %>
 </ul>
 
+
 <%= link_to "To games search page", games_path %>
+

@@ -14,20 +14,21 @@
 <ul>
   <% @user.games.each do |game| %>
     <% game.bookings.each do |booking| %>
-  <li>
-    <p>
-      <%=link_to booking.user.user_name, user_path(@user) %>
-      whats to rent
-      <%= booking.game.name %>
-      for <%= booking.rent_start %>
-      to <%= booking.rent_end %>
-      status:
-      <%= booking.status %>
-    </p>
-      <a href="" class="btn-xs btn-danger"><%= booking.declined_booking %></a>
-      <a href="" class="btn-xs btn-success"><%= booking.accept_booking %></a>
-  </li>
-  <% end %>
+      <li>
+        <p>
+          <%=link_to booking.user.user_name, user_path(@user) %>
+          whats to rent
+          <%= booking.game.name %>
+          for <%= booking.rent_start %>
+          to <%= booking.rent_end %>
+          status:
+          <%= booking.status %>
+          <%= button_to "accept" , :onclick => booking.accept_booking %>
+          <a href="" class="btn-xs btn-danger"><%= booking.declined_booking %></a>
+          <a href="" class="btn-xs btn-success"><%= booking.accept_booking %></a>
+        </p>
+      </li>
+    <% end %>
   <% end %>
 </ul>
 <% end %>
