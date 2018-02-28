@@ -27,15 +27,16 @@
     background-color: transparent;
     height: 542px;
     width: 225px;
-    position: absolute;
-    z-index: 1 !important;
+    // z-index: 600;
     top: 0;
     right: 14px;
     left: 11px;
 }
 
 .top {
-  z-index: 1000 !important;
+  width: 85px;
+  margin-right: 0px;
+  // z-index: 1000;
 }
 .results-card-description {
   width: 205px;
