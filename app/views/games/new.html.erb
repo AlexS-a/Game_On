@@ -1,14 +1,19 @@
-<h1>Create a new game rental</h1>
+<div class="container game form">
 
-<%= simple_form_for @game do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :genre %>
-  <%= f.input :location %>
-  <%= f.input :platform %>
-  <%= f.input :price %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.button :submit %>
-<% end %>
+  <h1>Create a new game rental</h1>
+
+  <%= simple_form_for @game do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :genre %>
+    <%= f.input :location %>
+    <%= f.input :platform %>
+    <%= f.input :price %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to "Back", games_path, class: "btn btn-warning form-back" %>
+</div>
 
