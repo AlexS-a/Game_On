@@ -1,4 +1,4 @@
-.card {
+.result-card {
   display: flex;
   justify-content: space-around;
   padding: 5px;
@@ -17,12 +17,12 @@
   }
 }
 
-.card img {
+.result-card img {
   height: 290px;
   width: 239px;
 }
 
-.card-description {
+.result-card-description {
   width: 230px;
   padding-left: 10px;
   h2{
@@ -59,7 +59,7 @@ i{
   }
 }
 
-.card-link{
+.result-card-link{
   background-color: transparent;
   height: 300px;
   width: 400px;
