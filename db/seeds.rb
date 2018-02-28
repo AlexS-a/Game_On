@@ -8,6 +8,8 @@
 require 'faker'
 require 'open-uri'
 
+User.destroy_all
+
 ben = User.create!(
   email: "ben.s-a@hotmail.com",
   user_name: "Ben",
