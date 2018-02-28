@@ -1,17 +1,23 @@
-<div class="container text-center">
-  <div class="title">
-    <h1>Search results</h1>
-  </div>
+<div class="banner-results" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path("play-games.jpg",
+      width: 300, height: 200, crop: :thumb) %>)">
+  <div class="banner-content">
+    <div class="container text-center">
+      <div class="title">
+        <h1>Search results</h1>
+      </div>
 
-  <div class ="detailed-form">
-    <%= form_tag games_path, :method => 'get' do %>
-      <p>
-        <%= text_field_tag :search, params[:search], placeholder: 'Enter name' %>
-        <%= text_field_tag :search_location, params[:search_location], placeholder: 'Enter location' %>
-        <%= submit_tag "Search", :name => nil %>
-      </p>
-    <% end %>
+      <div class ="detailed-form">
+        <%= form_tag games_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search], placeholder: 'Enter name' %>
+            <%= text_field_tag :search_location, params[:search_location], placeholder: 'Enter location' %>
+            <%= submit_tag "Search", :name => nil %>
+          </p>
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
 
 
     <div class="row">
@@ -33,7 +39,7 @@
         </div>
       <% end %>
     </div>
-</div>
+
 
 
 
