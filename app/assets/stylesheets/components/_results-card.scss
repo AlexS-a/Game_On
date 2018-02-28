@@ -62,6 +62,10 @@ i{
   opacity: 0.5px;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 // .fas {
 //   position: absolute;
 //   right: 17px;
@@ -73,8 +77,3 @@ i{
 //     color: black;
 //   }
 // }
-
-
-a {
-  text-decoration: none !important;
-}

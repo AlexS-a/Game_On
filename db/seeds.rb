@@ -39,4 +39,3 @@ counter = 1
   puts "created user number #{counter}"
   counter += 1
 end
-

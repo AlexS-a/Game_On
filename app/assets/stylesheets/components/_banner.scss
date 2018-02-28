@@ -11,6 +11,23 @@
   border-color: #d1cfe2;
 }
 
+.banner-results {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 80vh;
+  background-size: cover;
+  justify-content: center;
+  border-bottom: solid;
+  border-color: #d1cfe2;
+}
+
+.banner-results h1 {
+  font-size: 50px;
+  color: #d7d6d6;
+}
+
 .banner h1 {
   font-size: 80px;
   font-weight: bold;
