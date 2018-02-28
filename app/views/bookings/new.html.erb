@@ -1,10 +1,12 @@
-<h1>Create a booking for <%= @game.name %></h1>
+<div class="container booking form">
 
-<%= simple_form_for [@game, @booking] do |f| %>
-  <%= f.input :rent_start %>
-  <%= f.input :rent_end %>
-  <%= f.button :submit %>
-<% end %>
+  <h1>Create a booking for <%= @game.name %></h1>
 
-
-<%= link_to "back to the game", game_path(@game) %>
+  <%= simple_form_for [@game, @booking] do |f| %>
+    <%= f.input :rent_start %>
+    <%= f.input :rent_end %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to "Back", game_path(@game), class: "btn btn-warning form-back" %>
+</div>
