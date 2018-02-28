@@ -10,4 +10,14 @@ class Game < ApplicationRecord
   validates :location, presence: true
   validates :platform, presence: true
   mount_uploader :photo, PhotoUploader
+
+  # def find_icon
+  #   if self.platform == 'steam'
+  #     "fab fa-steam-symbol"
+  #   elsif self.platform == 'PS4'
+  #     "fab fa-playstation"
+  #   elsif self.platform == 'XB1'
+  #   end
+
+  # end
 end
