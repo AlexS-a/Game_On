@@ -3,7 +3,10 @@
   <div class="banner-content">
     <h1>Game On</h1>
     <h3>Rent, Play, Complete, Repeat</h3>
-    <a class="btn btn-primary btn-lg">Sign Up</a>
+    <% if user_signed_in?  %>
+    <% else %>
+     <a class="btn btn-primary btn-lg">Sign Up</a>
+    <% end %>
   </div>
 </div>
 
