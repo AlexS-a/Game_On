@@ -3,7 +3,7 @@
 <p><%= @booking.rent_start %></p>
 <p><%= @booking.rent_end %></p>
 <p><%= @booking.game.price %></p>
-<p><%= @booking.game.user.user_name %></p>
+<p><%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %></p>
 <p><%= @booking.status %></p>
 
 

@@ -4,9 +4,11 @@ class GamesController < ApplicationController
   def index
     if params[:search].nil? && params[:search_location].nil?
       @games = policy_scope(Game)
-    elsif params[:search].nil?
+    elsif params[:search].blank? && params[:search_location].nil?
+      @games = policy_scope(Game)
+    elsif params[:search].blank?
       @games = policy_scope(Game).where(location: params[:search_location])
-    elsif params[:search_location].nil?
+    elsif params[:search_location].blank?
       @games = policy_scope(Game).where(name: params[:search])
     else
       @games = policy_scope(Game).where(name: params[:search]).where(location: params[:search_location])
