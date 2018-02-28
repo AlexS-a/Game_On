@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   resources :games do
-    resources :bookings, except: [:index, :show]
-
+    resources :bookings, except: [:index, :show, :destroy]
   end
-
-  resources :bookings, only: [:index, :show]
+  resources :users, only: [:show, :edit, :update]
+  resources :bookings, only: [:index, :show, :destroy]
   root to: 'pages#home'
 
   resources :users, only: [:show]

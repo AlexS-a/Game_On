@@ -1,3 +1,38 @@
+
+<h1><%= @user.user_name %></h1>
+<h2><%= @user.description %> </h2>
+<%= link_to "Edit your description", edit_user_path(@user) if @user == current_user %>
+<h3>These are your game up for rent</h3>
+<ul>
+  <% @user.games.each do |game| %>
+  <li>
+    <p><%= game.name %></p>
+  </li>
+  <% end %>
+</ul>
+
+<% if @user == current_user %>
+<h3>People who have sent you a booking request</h3>
+<ul>
+  <% @user.games.each do |game| %>
+    <% game.bookings.each do |booking| %>
+      <li>
+        <p>
+          <%=link_to booking.user.user_name, user_path(@user) %>
+          whats to rent
+          <%= booking.game.name %>
+          for <%= booking.rent_start %>
+          to <%= booking.rent_end %>
+        </p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= link_to "Edit", edit_user_registration_path(@user) if @user == current_user%>
+=======
 <div class="container">
   <div class="col-lg-3 col-md-4 hide-sm">
    <div id="user" class="space-4 ">
@@ -75,5 +110,6 @@
      </div>
   </div>
 </div>
+
 
 
