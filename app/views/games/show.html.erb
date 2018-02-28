@@ -1,11 +1,50 @@
-<h1><%= @game.name %></h1>
+<div class="container game">
+  <div class="game-flex">
+    <div class="game-image">
+      <%= cl_image_tag @game.photo %>
+    </div>
+    <div class="game-details">
+      <h1><%= @game.name %></h1>
+      <p id="description"><%= @game.description%></p>
+      <p id="genre">Genre:<%= @game.genre %></p>
+      <div class="pricing">
+        <p class="price">£<%= @game.price %>/pw</p>
+        <%= link_to "Rent",  new_game_booking_path(@game), class: "btn btn-primary game-show" %>
+      </div>
+      <div class="icon-stuff">
+        <p class="platform">Platform: <%= @game.platform %></p>
+        <p class="location">Location: <%= @game.location %></p>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Back", games_path, class: "btn btn-warning back-to-search" %>
 
-<p><%= @game.description %></p>
-<p><%= @game.platform %></p>
-<p><%= @game.genre %></p>
-<p><%= @game.price %></p>
-<p><%= @game.location %></p>
-<p><%= link_to @game.user.user_name, user_path(@game.user) %></p>
 
-<%= link_to "Create a booking",  new_game_booking_path(@game) %>
-<%= link_to "Back to search page", games_path %>
+  <div class="reviews">
+      <svg style="display: inline-block;" height="10" width="100">
+        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
+      </svg>
+      <h1 style="display: inline-block;">Reviews</h1>
+      <svg style="display: inline-block;" height="10" width="100">
+        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
+      </svg>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+  </div>
+</div>
