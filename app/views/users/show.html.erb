@@ -1,5 +1,6 @@
 <h1><%= @user.user_name %></h1>
-
+<h2><%= @user.description %> </h2>
+<%= link_to "Edit your description", edit_user_path(@user) if @user == current_user %>
 <h3>These are your game up for rent</h3>
 <ul>
   <% @user.games.each do |game| %>
@@ -21,14 +22,12 @@
           <%= booking.game.name %>
           for <%= booking.rent_start %>
           to <%= booking.rent_end %>
-          status:
-          <%= booking.status %>
-          <%= button_to "accept" , :onclick => booking.accept_booking %>
-          <a href="" class="btn-xs btn-danger"><%= booking.declined_booking %></a>
-          <a href="" class="btn-xs btn-success"><%= booking.accept_booking %></a>
         </p>
       </li>
     <% end %>
   <% end %>
 </ul>
 <% end %>
+
+
+<%= link_to "Edit", edit_user_registration_path(@user) if @user == current_user%>

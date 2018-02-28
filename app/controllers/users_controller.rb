@@ -11,12 +11,9 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = current_user
+    @user.description = params[:user][:description]
     authorize @user
-    if (@user.update(user_params))
-      redirect_to users_path(@user)
-    else
-      render 'edit'
-    end
   end
 
   def destroy
@@ -32,8 +29,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :user_name)
+    params.require(:user).permit(:description)
   end
-
 end
 
