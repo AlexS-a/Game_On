@@ -1,9 +1,10 @@
-<h1>Here are the booking details of<%= @booking.game.name %></h1>
+<h1>Here are the booking details of <%= @booking.game.name %></h1>
 
 <p><%= @booking.rent_start %></p>
 <p><%= @booking.rent_end %></p>
 <p><%= @booking.game.price %></p>
-<p><%= @booking.user.user_name %></p>
+<p><%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %></p>
+<p><%= @booking.status %></p>
 
 
 <%= link_to "Back to your bookings", bookings_path %>

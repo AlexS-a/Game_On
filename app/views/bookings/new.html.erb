@@ -1,4 +1,4 @@
-<h1>Create a booking for <%= @game %></h1>
+<h1>Create a booking for <%= @game.name %></h1>
 
 <%= simple_form_for [@game, @booking] do |f| %>
   <%= f.input :rent_start %>
