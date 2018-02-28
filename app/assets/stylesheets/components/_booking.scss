@@ -1,0 +1,41 @@
+.banner-bookings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-size: cover;
+  justify-content: center;
+  border-bottom: solid;
+  border-color: #d1cfe2;
+    color: white;
+  text-align: center;
+}
+
+.detailed-form {
+ color: white;
+}
+
+
+.booking-description {
+  width: 800px;
+  color: white;
+}
+
+h1 {
+    color: white;
+}
+
+
+.booking-results {
+  // display: flex;
+  margin: 100px 150px;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+
+.booking-card {
+    width: 80%;
+    width: 80%;
+}
