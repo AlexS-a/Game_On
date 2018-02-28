@@ -25,7 +25,8 @@
               <h6>Genre: <%= game.genre %></h6>
               <h5><%= game.platform %></h6>
               <h2>£<%= game.price %>/pw</h2>
-              <%= link_to "Rent", new_game_booking_path(game), class: "btn btn-primary" %>
+              <%= link_to "", game_path(game), class: "results-card-link"  %>
+              <div class="top"><%= link_to "Rent", new_game_booking_path(game), class: "btn btn-primary"  %></div>
             </div>
           </div>
 
