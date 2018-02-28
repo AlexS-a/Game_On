@@ -18,14 +18,15 @@
       <% @games.each do |game| %>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 
-          <div class="result-card">
+          <div class="results-card">
             <%= cl_image_tag game.photo %>
-            <div class="result-card-description">
+            <div class="results-card-description">
               <h1><%= game.name %></h1>
               <h6>Genre: <%= game.genre %></h6>
               <h5><%= game.platform %></h6>
               <h2>£<%= game.price %>/pw</h2>
-              <%= link_to "Rent", new_game_booking_path(game), class: "btn btn-primary" %>
+              <%= link_to "", game_path(game), class: "results-card-link"  %>
+              <div class="top"><%= link_to "Rent", new_game_booking_path(game), class: "btn btn-primary"  %></div>
             </div>
           </div>
 
@@ -33,6 +34,10 @@
       <% end %>
     </div>
 </div>
+
+
+
+
 
 
 
