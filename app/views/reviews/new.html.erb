@@ -1,8 +1,13 @@
-<h1>Create a review for <%= @game.name %></h1>
+<div class="container">
+  <div class="review-form">
+    <h1>Create a review for <%= @game.name %></h1>
 
-<%= simple_form_for [@game, @review] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :comment %>
-  <%= f.input :rating %>
-  <%= f.button :submit, class: "btn btn-success" %>
-<% end %>
+    <%= simple_form_for [@game, @review] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :comment %>
+      <%= f.input :rating %>
+      <%= f.button :submit, class: "btn btn-success form-back" %>
+    <% end %>
+
+  </div>
+</div>
