@@ -5,7 +5,7 @@
     <h3>Rent, Play, Complete, Repeat</h3>
     <% if user_signed_in?  %>
     <% else %>
-     <%= link_to "Sign up", new_user_registration_path, class:"btn-lg btn-primary" %>
+     <p style="margin-top: 40px;"><%= link_to "Sign up", new_user_registration_path, class:"btn-lg btn-primary" %></p>
     <% end %>
   </div>
 </div>
@@ -31,7 +31,7 @@
   <div class="container-home">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="card-home">
           <div class="card-body" style="background-image: url(<%= image_path('GTA.jpg',
         width: 300, height: 300, crop: :thumb) %>)">
           </div>
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="card-home">
           <div class="card-body" style="background-image: url(<%= image_path("diablo.jpg",
       width: 300, height: 300, crop: :thumb) %>)">
           </div>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="card-home">
           <div class="card-body" style="background-image: url(<%= image_path("FIFA.jpg",
       width: 300, height: 300, crop: :thumb) %>)">
           </div>

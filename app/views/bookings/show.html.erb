@@ -5,8 +5,8 @@
         <h1><%= @booking.rent_start %></h1>
         <h1><%= @booking.rent_end %></h1>
         <h1>For an an amount of £<%= @booking.game.price %> per week</h1>
+        <%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %>
+        <%= @booking.status %>
       </div>
     </div>
 </div>
-<!-- <p><%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %></p> -->
-<!-- <p><%= @booking.status %></p> -->

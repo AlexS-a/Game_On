@@ -9,8 +9,9 @@
       <div class ="detailed-form">
         <%= form_tag games_path, :method => 'get' do %>
           <p>
-            <%= text_field_tag :search, params[:search], placeholder: 'Search' %>
-            <%= submit_tag "Search", :name => nil %>
+            <%= text_field_tag :search, params[:search], placeholder: 'Enter name' %>
+            <%= text_field_tag :search_location, params[:search_location], placeholder: 'Enter location' %>
+            <%= submit_tag "Search", class: "search2", :name => nil %>
           </p>
         <% end %>
       </div>
@@ -19,7 +20,7 @@
 </div>
 
 <div class="results">
-<h2 class="text-center">Your search results...</h2>
+  <h2 class="text-center popular">Your search results...</h2>
   <div class="container-results">
     <div class="row">
       <% @games.each do |game| %>

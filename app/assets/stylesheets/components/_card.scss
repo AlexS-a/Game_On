@@ -7,10 +7,10 @@
   margin-bottom: 100px;
 }
 
-.card {
+.card-home {
   width: 330px;
   height: 230px;
-  margin: 10px;
+  margin: 10%;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
@@ -43,6 +43,11 @@
 
 .container-home {
   margin-top: 100px;
-  margin-left: 260px;
-  margin-right: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.popular {
+  margin-top: 0px;
+  margin-bottom: 90px;
 }
