@@ -1,23 +1,24 @@
 .results {
   margin-top: 100px;
-  margin: 30px;
   padding: 50px;
   margin-bottom: 100px;
 }
 
+.returned {
+  margin: 0px !important;
+  padding-bottom: 30px !important;
+}
+
 .results-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 5px;
-  height: 530px;
+  // height: 530px;
   width: 210px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
   background-size: cover;
   background-color: white;
   color: black;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 5px;
+  margin: 0 auto;
   opacity: 0.9;
   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
   &:hover{
@@ -45,9 +46,10 @@
   margin-right: 0px;
 }
 
+
 .results-card-description {
   width: 205px;
-  height: 250px;
+  // height: 250px;
   h2{
     font-family: Helvetica, sans-serif;
     color: black;
@@ -68,6 +70,26 @@
   }
 }
 
+.results-card img {
+  height: 260px;
+  width: 196px;
+}
+
+.results-card-link{
+    background-color: transparent;
+    height: 542px;
+    width: 225px;
+    top: 0;
+    right: 14px;
+    left: 11px;
+}
+
+.top {
+  width: 85px;
+  margin-right: 0px;
+}
+
+
 i{
   font-size: 25px;
   opacity: 0.5px;
@@ -77,13 +99,15 @@ a {
   text-decoration: none !important;
 }
 
-.container-results {
-  margin: 100px 150px;
-}
-
 
 .title {
   margin-bottom: 50px;
 }
+
+.search2 {
+  color: #363732;
+  margin: 5px;
+}
+
 
 

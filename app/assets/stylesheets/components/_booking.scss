@@ -1,41 +1,40 @@
-.banner-bookings {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  background-size: cover;
-  justify-content: center;
-  border-bottom: solid;
-  border-color: #d1cfe2;
-    color: white;
-  text-align: center;
-}
-
+/* The the actual booking of game page Bookings new */
 .detailed-form {
- color: white;
+ color: #ffffff;
 }
-
 
 .booking-description {
   width: 800px;
-  color: white;
+  color: #dce1e9;
 }
 
-h1 {
-    color: white;
+.booking-title {
+  color: #ffffff;
 }
-
 
 .booking-results {
-  // display: flex;
   margin: 100px 150px;
   justify-content: space-between;
   padding: 5px;
 }
 
-
-.booking-card {
-    width: 80%;
-    width: 80%;
+.calender{
+  margin-top: 20px;
+  border-radius: 50px;
 }
+
+/* The bookings index page */
+
+.booking-cards {
+  margin: 20px;
+}
+
+.bookings {
+  background-size: cover;
+}
+
+.remove-margin {
+  margin-top: 0px !important;
+  background: rgba(0, 0, 0, 0) !important;
+}
+

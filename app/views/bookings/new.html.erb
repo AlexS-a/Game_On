@@ -2,18 +2,17 @@
       width: 300, height: 200, crop: :thumb) %>)">
   <div class="banner-content">
     <div class="container-bookings text-center">
-      <div class="title">
+      <div class="booking-title">
         <h1>Create a booking for <%= @game.name %></h1>
       </div>
 
       <div class ="detailed-form">
         <%= simple_form_for [@game, @booking] do |f| %>
-          <%= f.input :rent_start %>
-          <%= f.input :rent_end %>
-          <%= f.button :submit, class: "btn btn-success" %>
+          <%= f.input :rent_start, input_html: {class: "rent"} %>
+          <%= f.input :rent_end, input_html: {class: "rent"} %>
+          <%= f.button :submit, class: "btn btn-success calender" %>
         <% end %>
-        <%= link_to "Back to the game", game_path(@game), class: "btn btn-primary" %></div>
+        <%= link_to "Back to the game", game_path(@game), class: "btn btn-primary calender" %></div>
       </div>
     </div>
   </div>
-
