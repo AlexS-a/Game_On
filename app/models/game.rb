@@ -1,4 +1,7 @@
 class Game < ApplicationRecord
+  GENRES = ['Action/Shooter', 'Action/Platform', 'Action/Fighting', 'Action/BeatemUps']
+  PLATFORMS = ['PS4' , 'XB1', 'Steam(PC)']
+
   belongs_to :user
   has_many :bookings
   has_many :users, through: :bookings
@@ -11,13 +14,17 @@ class Game < ApplicationRecord
   validates :platform, presence: true
   mount_uploader :photo, PhotoUploader
 
-  # def find_icon
-  #   if self.platform == 'steam'
-  #     "fab fa-steam-symbol"
-  #   elsif self.platform == 'PS4'
-  #     "fab fa-playstation"
-  #   elsif self.platform == 'XB1'
-  #   end
+  # test
+  # validates_uniqueness_of :genre, :scope => [:games]
 
-  # end
+
+  def find_icon
+    if self.platform == 'Steam(PC)'
+      "fab fa-steam-symbol"
+    elsif self.platform == 'PS4'
+      "fab fa-playstation"
+    elsif self.platform == 'XB1'
+      "fab fa-xbox"
+    end
+  end
 end
