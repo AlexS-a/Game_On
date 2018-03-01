@@ -31,7 +31,7 @@
             <div class="results-card-description">
               <h1><%= game.name %></h1>
               <h6><%= game.genre %></h6>
-              <h5><%= game.platform %></h6>
+              <div class="show-icon"><i class="<%= game.find_icon %>"></i></div>
               <h2>£<%= game.price %>/pw</h2>
               <h6><%= game.location %></h6>
               <div class="top"><%= link_to "Rent", new_game_booking_path(game), class: "btn btn-primary" %></div>
