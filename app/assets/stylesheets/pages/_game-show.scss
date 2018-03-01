@@ -6,10 +6,11 @@
 
 }
 .game-image{
-  img{
-    top: 0px;
-    margin-right: 10px;
-  }
+  height: 400px;
+  width: 350px;
+  top: 0px;
+  margin-right: 10px;
+  background-size: cover;
 }
 .game-details{
   width: 400px;
@@ -88,11 +89,6 @@
   margin-top : 25px;
 
 }
-.game-image{
-  img{
-    height: 400px;
-    width: 300px;
-  }
-}
+
 
 
