@@ -1,4 +1,4 @@
-<div class="container game">
+<div class="container">
   <div class="game-flex">
     <div class="game-image" style="background-image: url(<%= cl_image_path @game.photo %>);">
     </div>
@@ -31,21 +31,6 @@
   <%= link_to "Create a review", new_game_review_path(@game) if game_id.include?(current_user.id)%>
   <% end %>
 
-  <ul>
-    <% @game.reviews.each do |review| %>
-    <li>
-      <%= review.name %>
-      <br>
-      <%= review.comment %>
-      <br>
-      <%= review.rating %>
-      <br>
-      <%= review.user.user_name %>
-      <br>
-      <%= link_to "Delete", review_path(review), method: :delete if current_user == review.user %>
-      </li>
-      <% end %>
-  </ul>
 
 
   <div class="reviews">
@@ -56,26 +41,24 @@
       <svg style="display: inline-block;" height="10" width="100">
         <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
       </svg>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
   </div>
+
+  <% @game.reviews.each do |review| %>
+    <div class="review-card">
+        <div class="review-title"><h2><%= review.name %></h2></div>
+        <div class="name-rate">
+          <h4><%= review.user.user_name %></h4>
+          <p><%= review.rating %></p>
+        </div>
+        <div class="description-box"><p><%= review.comment %></p></div>
+      <% if current_user == review.user %>
+      <%= link_to "Delete", review_path(review), method: :delete, class: "review-delete btn btn-danger" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
+
 
 
 
