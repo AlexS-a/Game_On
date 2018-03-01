@@ -11,6 +11,13 @@ class Game < ApplicationRecord
   validates :platform, presence: true
   mount_uploader :photo, PhotoUploader
 
+  include PgSearch
+  pg_search_scope :global_search,
+    against: [:name, :description, :genre, :location, :platform, :price],
+    using: {
+         tsearch: { prefix: true }
+       }
+
   # def find_icon
   #   if self.platform == 'steam'
   #     "fab fa-steam-symbol"

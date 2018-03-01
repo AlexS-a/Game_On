@@ -3,7 +3,12 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "GameOnLogo.png", height: 50 %>
   <% end %>
-
+  <%= form_tag games_path, class:"search-navbar", :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Go", :name => nil %>
+    </p>
+  <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
