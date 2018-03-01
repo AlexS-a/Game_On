@@ -20,7 +20,6 @@ counter = 1
     user_name: Faker::Internet.user_name
 
   )
-
   game = Game.new(
   name: Faker::Pokemon.name,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,

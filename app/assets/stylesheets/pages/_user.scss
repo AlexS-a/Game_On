@@ -1,90 +1,248 @@
+
 .container{
   background-color: white;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.background-banner{
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.55));
-  background-size: fixed;
-  border-radius: 25px;
-  height: 50vh;
-  margin: 25px;
-}
 
-ul {
-  list-style-type: none;
-}
+// .img-responsive{
+//   border-radius: 150px;
+//   padding-top: 10px;
+//   padding-right: 0px;
+// }
 
-.img-responsive{
-  border-radius: 150px;
-  padding-top: 10px;
-}
+// .slideshow-images{
+//   padding-left: 0px;
+// }
 
-.slideshow-images{
-  padding-left: 0px;
-}
+// .panel-header {
+//   background-color: #edefed;
+//   border-top: 0;
+// }
+// .panel-header {
+//   position: relative;
+//   color: #484848;
+//   font-size: 16px;
+//   padding-top: 12px;
+//   padding-bottom: 12px;
+//   border-bottom: 1px solid #dce0e0;
+//   margin: 0;
+//   padding: 20px;
+//   border-top: 1px solid #dce0e0;
+// }
+// ul.panel-body>li {
+//   position: relative;
+//   margin: 0;
+//   padding: 20px;
+//   border-top: 1px solid #dce0e0;
+// }
+// .panel-body {
+//   position: relative;
+//   margin: 0;
+//   padding: 20px;
+//   border-top: 0px;
+// }
 
-.panel-dark, .panel-header {
-  background-color: #edefed;
-  border-top: 0;
-}
-.panel-header {
-  position: relative;
-  color: #484848;
-  font-size: 16px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #dce0e0;
-  margin: 0;
-  padding: 20px;
-  border-top: 1px solid #dce0e0;
-}
-ul.panel-body>li, ol.panel-body>li {
-  position: relative;
-  margin: 0;
-  padding: 20px;
-  border-top: 1px solid #dce0e0;
-}
-.panel-body {
-  position: relative;
-  margin: 0;
-  padding: 20px;
-  border-top: 0px;
-}
+// dl{
+//   margin-bottom: 1px;
+// }
 
-dl{
-  margin-bottom: 1px;
-}
+// .col-lg-12 {
+//   width: 100%;
+//   float: left;
+// }
 
-.col-lg-12 {
+// .col-md-8 {
+//   width: 66.66667%;
+//   float: left;
+// }
+
+// .space-top-2 {
+//   margin-top: 12px;
+// }
+// h5 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   text-display: inline;
+// }
+
+// .for-rent {
+//   margin: 10px;
+//   color: white;
+// }
+
+// .gamesdiv{
+//   width: 260px;
+//   height: 300px;
+//   padding-right: 50px !important;
+// }
+
+// .My-name{
+//   color: white;
+//   margin-left: 8px;
+// }
+
+// .userrow{
+//   margin-top: 10px;
+// }
+
+// .row-2{
+//   height: 50px;
+//   color: white;
+// }
+
+// // card begin
+// .card {
+//     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+//     transition: 0.3s;
+//     width: 40%;
+// }
+
+// .card:hover {
+//     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+// }
+
+// .container2 {
+//     padding: 2px 16px;
+// }
+
+// h4, h3{
+//   color: white;
+// }
+
+// .gamer{
+//   color: white;
+//   width: 100%;
+//   min-width: 300px;
+//   overflow: auto;
+// }
+
+// .cardimage{
+//   width: 100%;
+// }
+
+// // card end
+
+
+// .price{
+//   color: white;
+// }
+
+
+// // all-cards-for-games begin
+
+// h1{
+//   color: black;
+// }
+
+// .card3{
+//   height: 200px;
+//   width: 200px;
+//   background-repeat: no-repeat;
+//   background-image: contain !important;
+//   background-size:cover;
+//   float: none;
+//   display: inline-block;
+// }
+
+// .btn{
+//   position: relative-middle;
+// }
+
+// // buttons start
+// .edit-button {
+//   position: absolute;
+// }
+
+// .delete-button{
+//  position: absolute;
+// }
+// // all-cards-for-games end
+
+.all-cards {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  float: left;
+  justify-content: space-around;
 }
 
-.col-md-8 {
-  width: 66.66667%;
-  float: left;
+.show-white-card {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
+  // box-shadow: 2px 2px 4px lightgray;
+  .card-show-header {
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 10px;
+  }
+
+  .card-show-body {
+    padding: 20px;
+  }
+}
+.card4 {
+  background-color: white;
+  height: 300px;
+  width: 30%;
+  background-size: cover;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+  h2{
+    color: black;
+    text-align: center;
+    margin-top: 0px;
+  }
+  .card-show-bottom{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .price {
+    background: white;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+}
+.avatar-large {
+  width: 100%;
+  border-radius:50%;
 }
 
-.space-top-2 {
-  margin-top: 12px;
-}
-h5, .h5 {
-  font-size: 16px;
-  font-weight: bold;
-  text-display: inline;
+.card3 {
+  height: 300px;
+  width: 30%;
+  background-size: cover;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+  h2{
+    color: white;
+    text-align: center;
+    margin-top: 0px;
+  }
+  .card-show-bottom{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .price {
+    background: white;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
 }
 
-.for-rent {
-  margin: 10px;
-}
 
-.games-for-sale{
-  width: 260px;
-  object-fit: cover;
-}
-
-.borderlands{
-  height: 150px;
-}
