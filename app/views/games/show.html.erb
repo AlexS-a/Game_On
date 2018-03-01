@@ -1,4 +1,4 @@
-<div class="container game">
+<div class="container">
   <div class="game-flex">
     <div class="game-image" style="background-image: url(<%= cl_image_path @game.photo %>);">
     </div>
@@ -40,15 +40,12 @@
 
   <% @game.reviews.each do |review| %>
     <div class="review-card">
-      <div class="review-card-flex">
-        <div class="review-details">
-          <div class="review-avatar"></div>
-          <h2><%= review.name %></h2>
+        <div class="review-title"><h2><%= review.name %></h2></div>
+        <div class="name-rate">
           <h4><%= review.user.user_name %></h4>
-          <div class="review-rating"><%= review.rating %></div>
+          <p><%= review.rating %></p>
         </div>
-        <p><%= review.comment %></p>
-      </div>
+        <div class="description-box"><p><%= review.comment %></p></div>
       <% if current_user == review.user %>
       <%= link_to "Delete", review_path(review), method: :delete, class: "review-delete btn btn-danger" %>
       <% end %>

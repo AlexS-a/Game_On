@@ -1,6 +1,5 @@
 .review-card{
   padding: 5px;
-  height: 190px;
   width: 870px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   background-size: cover;
@@ -10,51 +9,48 @@
   margin: 10px 0;
   opacity: 0.9;
   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-  position: relative;
 
   &:hover{
     opacity: 1;
   }
 
-  .review-card-flex{
-    display: flex;
-    justify-content: space-between;
 
-    p{
-      // position: absolute;
-      // bottom: 70px;
-      // font-size: 15px;
-    }
-  }
+  .review-title{
 
-  .review-details{
     h2{
-      position: absolute;
-      top: 1px;
-      right: 360px;
-      margin-top: 0px;
-      font-size: 28px;
+      text-align: center;
+      margin: 0px;
+      font-size: 23px;
       color: black;
     }
+  }
 
+  .name-rate{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     h4{
       font-size: 20px;
-      position: absolute;
-      top: 12px;
       margin-top: 0px;
-      left: 95px;
-    }
-
-    .review-rating{
-      position: absolute;
-      right: 10px;
+      margin-left: 88px;
+      margin-bottom: 28px;
     }
   }
 
+  .description-box{
+    width: 99%;
+    // border: 1px solid rgba(0,0,0,0.8);
+
+    p{
+      padding-left: 10px;
+      font-size: 15px;
+    }
+  }
+
+
   .review-delete{
-    position: absolute;
-    bottom: 5px;
     font-size: 13px;
+
   }
 }
 
