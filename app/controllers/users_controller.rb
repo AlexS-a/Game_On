@@ -13,6 +13,8 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.description = params[:user][:description]
+    @user.save
+    redirect_to user_path(@user)
     authorize @user
   end
 
