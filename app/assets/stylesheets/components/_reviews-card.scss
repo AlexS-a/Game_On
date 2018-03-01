@@ -1,0 +1,56 @@
+.review-card{
+  padding: 5px;
+  width: 870px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-size: cover;
+  background-color: white;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  opacity: 0.9;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+
+  &:hover{
+    opacity: 1;
+  }
+
+
+  .review-title{
+
+    h2{
+      text-align: center;
+      margin: 0px;
+      font-size: 23px;
+      color: black;
+    }
+  }
+
+  .name-rate{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    h4{
+      font-size: 20px;
+      margin-top: 0px;
+      margin-left: 88px;
+      margin-bottom: 28px;
+    }
+  }
+
+  .description-box{
+    width: 99%;
+    // border: 1px solid rgba(0,0,0,0.8);
+
+    p{
+      padding-left: 10px;
+      font-size: 15px;
+    }
+  }
+
+
+  .review-delete{
+    font-size: 13px;
+
+  }
+}
+

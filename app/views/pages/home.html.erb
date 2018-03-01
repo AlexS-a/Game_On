@@ -5,13 +5,13 @@
     <h3>Rent, Play, Complete, Repeat</h3>
     <% if user_signed_in?  %>
     <% else %>
-     <a class="btn btn-primary btn-lg">Sign Up</a>
+     <%= link_to "Sign up", new_user_registration_path, class:"btn-lg btn-primary" %>
     <% end %>
   </div>
 </div>
 
 
-<div class="container text-center">
+<div class="container-banner text-center">
  <div class="flex">
    <h2 class="text-center">Search for your next game?</h2>
     <div class="search">
@@ -28,7 +28,7 @@
 
 <div class="recent">
 <h2 class="text-center">Check out our most popular games...</h2>
-  <div class="container">
+  <div class="container-home">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <div class="card">

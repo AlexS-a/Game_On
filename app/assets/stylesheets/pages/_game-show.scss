@@ -1,0 +1,93 @@
+.container{
+  background-color: #f7f7f7;
+  border-radius: 0.6%;
+  margin-top: 10px;
+  width: 900px;
+}
+.game-image{
+  height: 400px;
+  width: 350px;
+  top: 0px;
+  margin-right: 10px;
+  background-size: cover;
+}
+.game-details{
+  width: 400px;
+
+  h1{
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  #description{
+    opacity: 0.5;
+  }
+  #genre{
+    font-weight: bolder;
+  }
+
+  .pricing{
+  display:flex;
+  flex-direction: row;
+
+    .price{
+      font-size: 24px;
+    }
+
+    .btn-primary.game-show{
+      margin-left: 180px;
+    }
+  }
+
+  .icon-stuff{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+    .platform{
+      // position: relative;
+    }
+
+    .location{
+      font-weight: bolder;
+      margin-left: 100px;
+    }
+
+    #platform-text{
+      font-weight:bold;
+      font-size: 18px;
+    }
+  }
+}
+
+.back-to-search{
+  margin-top: 20px;
+}
+.reviews{
+  text-align: center;
+  h1{
+    font-size: 24px;
+  }
+  .line{
+    color: black;
+  }
+}
+
+.show-icon {
+  float: left;
+}
+
+.fab {
+  font-size: 40px;
+}
+
+
+.game-flex{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top : 25px;
+
+}
+
+
+

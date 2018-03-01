@@ -1,11 +1,65 @@
-<h1><%= @game.name %></h1>
+<div class="container">
+  <div class="game-flex">
+    <div class="game-image" style="background-image: url(<%= cl_image_path @game.photo %>);">
+    </div>
+    <div class="game-details">
+      <h1><%= @game.name %></h1>
+      <p id="description"><%= @game.description%></p>
+      <p id="genre">Genre:<%= @game.genre %></p>
+      <div class="pricing">
+        <p class="price">£<%= @game.price %>/pw</p>
+        <%= link_to "Rent",  new_game_booking_path(@game), class: "btn btn-primary game-show" %>
+      </div>
+      <div class="icon-stuff">
+        <p id="platform-text">Platform:</p>
+        <p class="location">Location: <%= @game.location %></p>
+      </div>
+      <div class="show-icon"><i class="<%= @game.find_icon %>"></i></div>
+    </div>
+  </div>
 
-<p><%= @game.description %></p>
-<p><%= @game.platform %></p>
-<p><%= @game.genre %></p>
-<p><%= @game.price %></p>
-<p><%= @game.location %></p>
-<p><%= link_to @game.user.user_name, user_path(@game.user) %></p>
 
-<%= link_to "Create a booking",  new_game_booking_path(@game) %>
-<%= link_to "Back to search page", games_path %>
+
+  <%= link_to "Back", games_path, class: "btn btn-warning back-to-search" %>
+
+
+  <% game_id = [] %>
+  <% @game.users.each do |user| %>
+    <% game_id << user.id%>
+  <% end %>
+  <% if user_signed_in? %>
+  <%= link_to "Create a review", new_game_review_path(@game) if game_id.include?(current_user.id)%>
+  <% end %>
+
+
+
+  <div class="reviews">
+      <svg style="display: inline-block;" height="10" width="100">
+        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
+      </svg>
+      <h1 style="display: inline-block;">Reviews</h1>
+      <svg style="display: inline-block;" height="10" width="100">
+        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
+      </svg>
+  </div>
+
+  <% @game.reviews.each do |review| %>
+    <div class="review-card">
+        <div class="review-title"><h2><%= review.name %></h2></div>
+        <div class="name-rate">
+          <h4><%= review.user.user_name %></h4>
+          <p><%= review.rating %></p>
+        </div>
+        <div class="description-box"><p><%= review.comment %></p></div>
+      <% if current_user == review.user %>
+      <%= link_to "Delete", review_path(review), method: :delete, class: "review-delete btn btn-danger" %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
