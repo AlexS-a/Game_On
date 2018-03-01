@@ -8,9 +8,6 @@
 require 'faker'
 require 'open-uri'
 
-User.destroy_all
-Game.destroy_all
-
 # User.destroy_all
 
 url = 'https://source.unsplash.com/collection/829192/1920x1080'
@@ -23,8 +20,6 @@ counter = 1
     user_name: Faker::Internet.user_name
 
   )
-
-  5.times do
     game = Game.new(
     name: Faker::Pokemon.name,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
