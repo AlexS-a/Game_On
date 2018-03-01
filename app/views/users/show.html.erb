@@ -1,116 +1,80 @@
 <div class="container">
-  <div class="col-lg-3 col-md-4 hide-sm">
-   <div id="user" class="space-4 ">
-    <div>
-      <div class="space-2" id="user-media-container">
-        <div id="slideshow" class="slideshow">
-          <div class="slideshow-preload"></div>
-          <ul class="slideshow-images">
-            <li class="active media-photo media-photo-block">
-              <img alt="Profile-Picture" class="img-responsive" height="225" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" title="Profile-Picture" width="225">
-            </li>
-            <li class="media-photo media-photo-block"></li>
-          </ul>
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
+
+      <div class="show-white-card text-center">
+        <div class="card-show-header">
+          <h4><%= @user.user_name %></h4>
+        </div>
+
+        <div class="card-show-body">
+          <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="panel space-4">
-    <div class="panel-header">
-      About me (description)
-    </div>
-    <div class="panel-body">
-      <ul class="list-unstyled space-3" title="Verified info">
-        <li class="userrow row-table space-2">
-          <div class="panel-body">
-            <div class="col-12 col-middle">
-              <p>
-               <%= @user.description %> </p>
-             </div>
-           </div>
-         </ul>
-       <%= link_to "Edit >>", edit_user_path(@user) if @user == current_user%>
 
-       </div>
-     </div>
-
-     <div class="panel space-4">
-      <div class="panel-header">
-        Follow me
-      </div>
-      <div class="panel-body">
-        <dl>
-          <dt>All social media</dt>
-          <a href="#"><dd>Facebook</dd></a>
-          <a href="#"><dd>Twitter</dd></a>
-          <a href="#"><dd>Instagram</dd></a>
-        </dl>
-      </div>
-    </div>
-
-    <div class="panel space-4">
-      <div class="panel-header">
-        Settings
-      </div>
-      <div class="panel-body">
-        <dl>
-          <dt><%=link_to "Edit Account Setting" , edit_user_registration_path(@user) if @user == current_user%></dt>
-        </dl>
-      </div>
-    </div>
-  </div>
-
-    <div class="h5 space-top-2">
-     <h1 class="My-name">Hi, My name is <%= @user.user_name %></h1>
-   </div>
-
-   <h3 class="for-rent">These are your game up for rent</h3>
-
-  <div class="all-cards col-lg-3 col-md-8 col-sm-12">
-    <% @user.games.each do |game| %>
-      <div class="card3" style="background-image: url(<%= cl_image_path game.photo %>);">
-        <h1><%= game.name %></h1>
-        <span><%= game.price %></span>
-          <a href="#" class="btn btn-primary edit-button">Edit Details</a>
+      <div class="show-white-card text-center">
+        <div class="card-show-header">
+          <h4>About me</h4>
         </div>
+        <div class="card-show-body">
+          <p><%= @user.description %></p>
+          <%= link_to "Edit", edit_user_path(@user) if @user == current_user %>
+        </div>
+      </div>
+
+      <div class="show-white-card text-center">
+        <div class="card-show-header">
+          <h4>Follow me</h4>
+        </div>
+        <div class="card-show-body">
+          <a href="#">Facebook</a><br>
+          <a href="#">Twitter</a><br>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+
+      <div class="show-white-card text-center">
+        <div class="card-show-header">
+          <h4>Profile settings</h4>
+        </div>
+        <div class="card-show-body">
+          <a href="#">Edit profile information</a><br>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-sm-9">
+      <h3 class="text-white">These are your game up for rent</h3>
+      <div class="all-cards">
+        <% @user.games.each do |game| %>
+          <div class="card3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url(<%= cl_image_path game.photo %>);">
+            <h2><%= game.name %></h2>
+
+            <div class="card-show-bottom">
+              <span class="price">$<%= game.price %></span>
+              <div>
+                <%= link_to "edit", edit_game_path(game), class: "btn btn-primary edit-button" %>
+                <%= link_to "delete", game_path(game), method: :delete, class: "btn btn-danger delete" %>
+              </div>
+
+            </div>
+          </div>
         <% end %>
       </div>
-  </div>
+      <h3 class="text-white">People who have sent you a booking request</h3>
 
-  <div class="row-">
-    <!-- card starts here  -->
-    <% if @user == current_user %>
-    <ul>
-      <h3>People who have sent you a booking request</h3>
       <% @user.games.each do |game| %>
-      <% game.bookings.each do |booking| %>
-      <div class="col-xs-4">
-       <img src="https://www.w3schools.com/howto/img_avatar.png" class="cardimage" alt="Avatar">
-       <div class="container2">
-        <li>
-          <p>
-            <%=link_to booking.user.user_name, user_path(@user) %>
-            whats to rent
-            <%= booking.game.name %>
-            for <%= booking.rent_start %>
-            to <%= booking.rent_end %>
-          </p>
-        </li>
-      </div>
-    </div>
+        <% game.bookings.each do |booking| %>
 
-    <div class="col-xs-4">
-     <img src="https://www.w3schools.com/howto/img_avatar.png" class="cardimage" alt="Avatar">
-       <div class="container2">
-          <h4><b>Ivan Tinkle</b></h4>
-          <p class="gamer"> Gamer tag:
-        Mia Krotch</p>
-      </div>
-    </div>
-      <% end %>
+          <p><%= link_to booking.user.user_name, user_path(@user) %>
+          whats to rent
+          <%= booking.game.name %>
+          for <%= booking.rent_start %>
+          to <%= booking.rent_end %></p>
+
         <% end %>
-      </ul>
       <% end %>
+    </div>
   </div>
 </div>
 
