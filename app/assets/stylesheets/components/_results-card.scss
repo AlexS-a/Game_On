@@ -25,9 +25,10 @@
   }
 }
 
-.results-card img {
+.results-card-image{
   height: 260px;
   width: 196px;
+  background-size: cover;
 }
 
 .results-card-link{
@@ -84,3 +85,5 @@ a {
 .title {
   margin-bottom: 50px;
 }
+
+
