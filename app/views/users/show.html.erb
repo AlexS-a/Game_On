@@ -38,7 +38,7 @@
           <h4>Profile settings</h4>
         </div>
         <div class="card-show-body">
-          <a href="#">Edit profile information</a><br>
+          <%= link_to "Edit", edit_user_registration_path(@user) if @user == current_user%>
         </div>
       </div>
 
@@ -65,13 +65,23 @@
 
       <% @user.games.each do |game| %>
         <% game.bookings.each do |booking| %>
+        <div class="card4">
+          <h2><%= game.name %></h2>
 
-          <p><%= link_to booking.user.user_name, user_path(@user) %>
-          whats to rent
-          <%= booking.game.name %>
-          for <%= booking.rent_start %>
-          to <%= booking.rent_end %></p>
+          <div class="card-show-bottom">
+            <span class="price">$<%= booking.game.price %></span>
+            <div>
+            </div>
 
+          </div>
+
+          <div class="text-center">
+            <p>
+              <%= link_to booking.user.user_name, user_path(booking.user) %> wants to rent <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %>
+
+              </p>
+          </div>
+        </div>
         <% end %>
       <% end %>
     </div>

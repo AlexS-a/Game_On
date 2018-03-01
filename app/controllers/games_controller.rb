@@ -40,7 +40,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    @game = Game.find(parmas[:id])
+    @game = Game.find(params[:id])
     @game.update(game_params)
     authorize @game
     redirect_to game_path
@@ -50,6 +50,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @game.destroy
     redirect_to games_path
+    authorize @game
   end
 
 

@@ -8,6 +8,9 @@
 require 'faker'
 require 'open-uri'
 
+User.destroy_all
+Game.destroy_all
+
 # User.destroy_all
 
 url = 'https://source.unsplash.com/collection/829192/1920x1080'
@@ -21,19 +24,21 @@ counter = 1
 
   )
 
-  game = Game.new(
-  name: Faker::Pokemon.name,
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  genre: Faker::Book.genre,
-  location: Faker::GameOfThrones.city,
-  platform: ["PS4", "XB1", "Steam"].sample,
-  price: (1..6).to_a.sample,
-  )
+  5.times do
+    game = Game.new(
+    name: Faker::Pokemon.name,
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    genre: Faker::Book.genre,
+    location: Faker::GameOfThrones.city,
+    platform: ["PS4", "XB1", "Steam"].sample,
+    price: (1..6).to_a.sample,
+    )
 
-  game.remote_photo_url = url
-  game.user = u
-  game.save
+    game.remote_photo_url = url
+    game.user = u
+    game.save
+  end
   sleep(1)
 
   puts "created user number #{counter}"
