@@ -17,12 +17,22 @@
 
 
   .review-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 12%;
+
 
     h2{
       text-align: center;
-      margin: 0px;
       font-size: 23px;
       color: black;
+      margin-left: 33%;
+      margin-top : 0%;
+      margin-bottom: 0%;
+    }
+    p{
+      text-weight: bold;
     }
   }
 
@@ -35,6 +45,12 @@
       margin-top: 0px;
       margin-left: 88px;
       margin-bottom: 28px;
+    }
+    .fa-star{
+      color: yellow;
+    }
+    p{
+      font-weight: bold;
     }
   }
 

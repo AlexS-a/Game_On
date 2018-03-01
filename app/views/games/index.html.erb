@@ -31,11 +31,10 @@
             </div>
             <div class="results-card-description">
               <h1><%= game.name %></h1>
-              <h6><%= game.genre %></h6>
-              <div class="show-icon"><i class="<%= game.find_icon %>"></i></div>
+              <div class="index-icon"><i class="<%= game.find_icon %>" id="index-icon"></i></div>
               <h2>£<%= game.price %>/pw</h2>
               <h6><%= game.location %></h6>
-              <div class="top"><%= link_to "Rent", new_game_booking_path(game), class: "btn btn-primary" %></div>
+              <%= link_to "Rent", new_game_booking_path(game), class: "btn btn-primary top" %>
             </div>
           </div>
           <% end %>

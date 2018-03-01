@@ -8,29 +8,32 @@
       <p id="genre">Genre:<%= @game.genre %></p>
       <div class="pricing">
         <p class="price">£<%= @game.price %>/pw</p>
-        <%= link_to "Rent",  new_game_booking_path(@game), class: "btn btn-primary game-show" %>
+        <%= link_to "Rent",  new_game_booking_path(@game), class: "btn btn-primary rent-show" %>
       </div>
       <div class="icon-stuff">
         <p id="platform-text">Platform:</p>
-        <p class="location">Location: <%= @game.location %></p>
+        <p class="location">Location:</p>
       </div>
-      <div class="show-icon"><i class="<%= @game.find_icon %>"></i></div>
+      <div class="show-icon"><i class="<%= @game.find_icon %>" id="game-detail-icon"></i></div>
+      <div class="location-name"><%= @game.location %></div>
     </div>
   </div>
 
 
+  <div class="show-links">
+    <%= link_to "Back", games_path, class: "btn btn-warning back-to-search" %>
 
-  <%= link_to "Back", games_path, class: "btn btn-warning back-to-search" %>
 
-
-  <% game_id = [] %>
-  <% @game.users.each do |user| %>
-    <% game_id << user.id%>
-  <% end %>
-  <% if user_signed_in? %>
-  <%= link_to "Create a review", new_game_review_path(@game) if game_id.include?(current_user.id)%>
-  <% end %>
-
+    <% game_id = [] %>
+    <% @game.users.each do |user| %>
+      <% game_id << user.id%>
+    <% end %>
+    <% if user_signed_in? %>
+      <% if game_id.include?(current_user.id) %>
+    <%= link_to "Create a review", new_game_review_path(@game), class: "btn btn-success rcreate-btn" %>
+      <% end %>
+    <% end %>
+  </div>
 
 
   <div class="reviews">
@@ -45,14 +48,16 @@
 
   <% @game.reviews.each do |review| %>
     <div class="review-card">
-        <div class="review-title"><h2><%= review.name %></h2></div>
+        <div class="review-title">
+          <h2><%= review.name %></h2>
+          <p>Rating</p>
+        </div>
         <div class="name-rate">
           <h4><%= review.user.user_name %></h4>
           <p>
             <% review.rating.times do %>
               <i class="fa fa-star"></i>
             <% end %>
-
           </p>
         </div>
         <div class="description-box"><p><%= review.comment %></p></div>
