@@ -1,17 +1,14 @@
+require 'faker'
+
 class GamesController < ApplicationController
+
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:search].nil? && params[:search_location].nil?
+    if params[:search].nil? or params[:search].blank?
       @games = policy_scope(Game)
-    elsif params[:search].blank? && params[:search_location].nil?
-      @games = policy_scope(Game)
-    elsif params[:search].blank?
-      @games = policy_scope(Game).where(location: params[:search_location])
-    elsif params[:search_location].blank?
-      @games = policy_scope(Game).where(name: params[:search])
     else
-      @games = policy_scope(Game).where(name: params[:search]).where(location: params[:search_location])
+      @games = policy_scope(Game).global_search(params[:search])
     end
   end
 
@@ -42,7 +39,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    @game = Game.find(parmas[:id])
+    @game = Game.find(params[:id])
     @game.update(game_params)
     authorize @game
     redirect_to game_path
@@ -52,6 +49,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @game.destroy
     redirect_to games_path
+    authorize @game
   end
 
 

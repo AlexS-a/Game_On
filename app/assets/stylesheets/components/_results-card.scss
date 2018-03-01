@@ -26,6 +26,27 @@
   }
 }
 
+.results-card-image{
+  height: 260px;
+  width: 196px;
+  background-size: cover;
+}
+
+.results-card-link{
+    background-color: transparent;
+    height: 542px;
+    width: 225px;
+    top: 0;
+    right: 14px;
+    left: 11px;
+}
+
+.top {
+  width: 85px;
+  margin-right: 0px;
+}
+
+
 .results-card-description {
   width: 205px;
   // height: 250px;
@@ -87,5 +108,6 @@ a {
   color: #363732;
   margin: 5px;
 }
+
 
 

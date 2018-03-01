@@ -1,7 +1,6 @@
-<div class="container game">
+<div class="container">
   <div class="game-flex">
-    <div class="game-image">
-      <%= cl_image_tag @game.photo %>
+    <div class="game-image" style="background-image: url(<%= cl_image_path @game.photo %>);">
     </div>
     <div class="game-details">
       <h1><%= @game.name %></h1>
@@ -12,12 +11,26 @@
         <%= link_to "Rent",  new_game_booking_path(@game), class: "btn btn-primary game-show" %>
       </div>
       <div class="icon-stuff">
-        <p class="platform">Platform: <%= @game.platform %></p>
+        <p id="platform-text">Platform:</p>
         <p class="location">Location: <%= @game.location %></p>
       </div>
+      <div class="show-icon"><i class="<%= @game.find_icon %>"></i></div>
     </div>
   </div>
+
+
+
   <%= link_to "Back", games_path, class: "btn btn-warning back-to-search" %>
+
+
+  <% game_id = [] %>
+  <% @game.users.each do |user| %>
+    <% game_id << user.id%>
+  <% end %>
+  <% if user_signed_in? %>
+  <%= link_to "Create a review", new_game_review_path(@game) if game_id.include?(current_user.id)%>
+  <% end %>
+
 
 
   <div class="reviews">
@@ -28,23 +41,25 @@
       <svg style="display: inline-block;" height="10" width="100">
         <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
       </svg>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
   </div>
+
+  <% @game.reviews.each do |review| %>
+    <div class="review-card">
+        <div class="review-title"><h2><%= review.name %></h2></div>
+        <div class="name-rate">
+          <h4><%= review.user.user_name %></h4>
+          <p><%= review.rating %></p>
+        </div>
+        <div class="description-box"><p><%= review.comment %></p></div>
+      <% if current_user == review.user %>
+      <%= link_to "Delete", review_path(review), method: :delete, class: "review-delete btn btn-danger" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
+
+
+
+
+
