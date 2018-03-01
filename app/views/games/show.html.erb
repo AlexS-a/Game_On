@@ -26,6 +26,40 @@
   <%= link_to "Create a review", new_game_review_path(@game) if game_id.include?(current_user.id) %>
 
 
+
+
+  <div class="reviews">
+      <svg style="display: inline-block;" height="10" width="100">
+        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
+      </svg>
+      <h1 style="display: inline-block;">Reviews</h1>
+      <svg style="display: inline-block;" height="10" width="100">
+        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
+      </svg>
+  </div>
+
+    <% @game.reviews.each do |review| %>
+    <div class="review-card">
+
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+    <div class="review-card">
+        <h1>Work in progress</h1>
+    </div>
+
+</div>
+
   <ul>
     <% @game.reviews.each do |review| %>
     <li>
@@ -42,35 +76,6 @@
       <% end %>
   </ul>
 
-
-  <div class="reviews">
-      <svg style="display: inline-block;" height="10" width="100">
-        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
-      </svg>
-      <h1 style="display: inline-block;">Reviews</h1>
-      <svg style="display: inline-block;" height="10" width="100">
-        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
-      </svg>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-  </div>
-</div>
 
 
 
