@@ -2,7 +2,7 @@
   background-image: url("../../assets/images/Video_gamers_on_couch.jpg");
   color: white;
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-size: cover;
   display: flex;
   align-items: center;
@@ -16,11 +16,25 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  height: 80vh;
+  height: calc(100vh - 70px);
   background-size: cover;
   justify-content: center;
   border-bottom: solid;
   border-color: #d1cfe2;
+}
+
+.banner-bookings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: calc(100vh - 70px);
+  background-size: cover;
+  justify-content: center;
+  border-bottom: solid;
+  border-color: #d1cfe2;
+  color: white;
+  text-align: center;
 }
 
 .banner-results h1 {
