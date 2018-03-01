@@ -12,9 +12,10 @@
         <%= link_to "Rent",  new_game_booking_path(@game), class: "btn btn-primary game-show" %>
       </div>
       <div class="icon-stuff">
-        <p class="platform">Platform: <%= @game.platform %></p>
+        <p id="platform-text">Platform:</p>
         <p class="location">Location: <%= @game.location %></p>
       </div>
+      <div class="show-icon"><i class="<%= @game.find_icon %>"></i></div>
     </div>
   </div>
   <%= link_to "Back", games_path, class: "btn btn-warning back-to-search" %>
