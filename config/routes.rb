@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :bookings, except: [:index, :show, :destroy]
     resources :reviews , only: [:create, :new]
   end
+  resources :reviews , only: [:destroy]
   resources :users, only: [:show, :edit, :update]
   resources :bookings, only: [:index, :show, :destroy]
   root to: 'pages#home'

@@ -24,6 +24,8 @@
     <% game_id << user.id%>
   <% end %>
   <%= link_to "Create a review", new_game_review_path(@game) if game_id.include?(current_user.id) %>
+
+
   <ul>
     <% @game.reviews.each do |review| %>
     <li>
@@ -34,7 +36,8 @@
       <%= review.rating %>
       <br>
       <%= review.user.user_name %>
-
+      <br>
+      <%= link_to "Delete", review_path(review), method: :delete if current_user == review.user %>
       </li>
       <% end %>
   </ul>
