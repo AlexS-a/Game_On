@@ -17,7 +17,27 @@
       </div>
     </div>
   </div>
+
   <%= link_to "Back", games_path, class: "btn btn-warning back-to-search" %>
+  <% game_id = [] %>
+  <% @game.users.each do |user| %>
+    <% game_id << user.id%>
+  <% end %>
+  <%= link_to "Create a review", new_game_review_path(@game) if game_id.include?(current_user.id) %>
+  <ul>
+    <% @game.reviews.each do |review| %>
+    <li>
+      <%= review.name %>
+      <br>
+      <%= review.comment %>
+      <br>
+      <%= review.rating %>
+      <br>
+      <%= review.user.user_name %>
+
+      </li>
+      <% end %>
+  </ul>
 
 
   <div class="reviews">
@@ -48,3 +68,7 @@
     </div>
   </div>
 </div>
+
+
+
+
