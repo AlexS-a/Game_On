@@ -38,43 +38,24 @@
       </svg>
   </div>
 
-    <% @game.reviews.each do |review| %>
+  <% @game.reviews.each do |review| %>
     <div class="review-card">
-
+      <div class="review-card-flex">
+        <div class="review-details">
+          <div class="review-avatar"></div>
+          <h2><%= review.name %></h2>
+          <h4><%= review.user.user_name %></h4>
+          <div class="review-rating"><%= review.rating %></div>
+        </div>
+        <p><%= review.comment %></p>
+      </div>
+      <% if current_user == review.user %>
+      <%= link_to "Delete", review_path(review), method: :delete, class: "review-delete btn btn-danger" %>
+      <% end %>
     </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-    <div class="review-card">
-        <h1>Work in progress</h1>
-    </div>
-
+  <% end %>
 </div>
 
-  <ul>
-    <% @game.reviews.each do |review| %>
-    <li>
-      <%= review.name %>
-      <br>
-      <%= review.comment %>
-      <br>
-      <%= review.rating %>
-      <br>
-      <%= review.user.user_name %>
-      <br>
-      <%= link_to "Delete", review_path(review), method: :delete if current_user == review.user %>
-      </li>
-      <% end %>
-  </ul>
 
 
 
