@@ -1,16 +1,7 @@
-.container{
+.container.profile{
   background-color: white;
   margin-top: 20px;
   margin-bottom: 20px;
-
-}
-
-.background-banner{
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.55));
-  background-size: fixed;
-  border-radius: 25px;
-  height: 50vh;
-  margin: 25px;
 }
 
 ul {
@@ -20,13 +11,14 @@ ul {
 .img-responsive{
   border-radius: 150px;
   padding-top: 10px;
+  padding-right: 0px;
 }
 
 .slideshow-images{
   padding-left: 0px;
 }
 
-.panel-dark, .panel-header {
+.panel-header {
   background-color: #edefed;
   border-top: 0;
 }
@@ -41,7 +33,7 @@ ul {
   padding: 20px;
   border-top: 1px solid #dce0e0;
 }
-ul.panel-body>li, ol.panel-body>li {
+ul.panel-body>li {
   position: relative;
   margin: 0;
   padding: 20px;
@@ -71,7 +63,7 @@ dl{
 .space-top-2 {
   margin-top: 12px;
 }
-h5, .h5 {
+h5 {
   font-size: 16px;
   font-weight: bold;
   text-display: inline;
@@ -79,13 +71,93 @@ h5, .h5 {
 
 .for-rent {
   margin: 10px;
+  color: white;
 }
 
-.games-for-sale{
+.gamesdiv{
   width: 260px;
-  object-fit: cover;
+  height: 300px;
+  padding-right: 50px !important;
 }
 
-.borderlands{
-  height: 150px;
+.My-name{
+  color: white;
+  margin-left: 8px;
 }
+
+.userrow{
+  margin-top: 10px;
+}
+
+.row-2{
+  height: 50px;
+  color: white;
+}
+
+.cool.col-xs-4{
+}
+
+
+// card begin
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container2 {
+    padding: 2px 16px;
+}
+
+h4, h3{
+  color: white;
+}
+
+.gamer{
+  color: white;
+  width: 100%;
+  min-width: 300px;
+  overflow: auto;
+}
+
+.cardimage{
+  width: 100%;
+}
+
+// card end
+
+
+
+
+// all-cards-for-games begin
+
+h1{
+  color: black;
+}
+
+.all-cards-for-games{
+  text-align: center;
+  display: flex;
+  display: inline;
+}
+
+.card3{
+  height: 300px;
+  width: 45%;
+}
+
+.btn{
+  position: relative-bottom;
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 5px;
+}
+
+// all-cards-for-games end
+
