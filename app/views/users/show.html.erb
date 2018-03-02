@@ -55,8 +55,10 @@
             <div class="card-show-bottom">
               <span class="price">$<%= game.price %></span>
               <div>
+                <% if @user == current_user %>
                 <%= link_to "edit", edit_game_path(game), class: "btn btn-primary edit-button" %>
                 <%= link_to "delete", game_path(game), method: :delete, class: "btn btn-danger delete" %>
+                <% end %>
               </div>
 
             </div>
