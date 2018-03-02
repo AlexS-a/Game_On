@@ -3,8 +3,14 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    # set_user
     authorize @user
   end
+
+  # def new
+  #   @user = User.new
+  #   authorize @user
+  # end
 
   def edit
     authorize @user
@@ -12,7 +18,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.description = params[:user][:description]
+    @user.update(user_params)
     @user.save
     redirect_to user_path(@user)
     authorize @user
@@ -31,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:description)
+    params.require(:user).permit(:description, :photo, :photo_cache)
   end
 end
 
