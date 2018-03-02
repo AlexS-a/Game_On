@@ -6,9 +6,9 @@
         <div class="card-show-header">
           <h4><%= @user.user_name %></h4>
         </div>
-
-        <div class="card-show-body">
-          <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+          <% if  @user.photo.present? %>
+            <div class="avatar-large" style="background-image: url('<%= cl_image_path @user.photo %>');">
+          <% end %>
         </div>
       </div>
 

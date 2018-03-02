@@ -48,17 +48,20 @@
 
   <% @game.reviews.each do |review| %>
     <div class="review-card">
-        <div class="review-title">
-          <h2><%= review.name %></h2>
-          <p>Rating</p>
-        </div>
-        <div class="name-rate">
-          <h4><%= review.user.user_name %></h4>
-          <p>
-            <% review.rating.times do %>
-              <i class="fa fa-star"></i>
-            <% end %>
-          </p>
+        <div class="review-top">
+          <div class="left">
+            <div class="user-avatar" style="background-image: url('<%= cl_image_path review.user.photo %>');"></div>
+            <h4><%= review.user.user_name %></h4>
+          </div>
+          <div class="middle"><h2><%= review.name %></h2></div>
+          <div class="right">
+            <p>Rating</p>
+            <p>
+              <% review.rating.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
+            </p>
+          </div>
         </div>
         <div class="description-box"><p><%= review.comment %></p></div>
       <% if current_user == review.user %>
