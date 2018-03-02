@@ -38,12 +38,32 @@
 
   <div class="reviews">
       <svg style="display: inline-block;" height="10" width="100">
-        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
+        <line id='left-line' x1="10" y1="5" x2="5" y2="5" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
       </svg>
       <h1 style="display: inline-block;">Reviews</h1>
       <svg style="display: inline-block;" height="10" width="100">
-        <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgba(0,0,0,0.3);stroke-width:2" />
+        <line id='right-line' x1="5" y1="5" x2="10" y2="5" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
       </svg>
+      <script>
+        const rightLine = document.getElementById('right-line');
+        const rightCount = 0;
+        const rightInterval = window.setInterval(function() {
+              rightLine.setAttribute('x1', 2 + +rightLine.getAttribute('y2'));
+              rightLine.setAttribute('x2', 1 + +rightLine.getAttribute('x2'));
+              if (rightCount++ > 75)
+                  window.clearInterval(rightInterval);
+          }, 50);
+
+        const leftLine = document.getElementById('left-line');
+        const leftCount = 0;
+        const leftInterval = window.setInterval(function() {
+              leftLine.setAttribute('x1', 2 + +leftLine.getAttribute('y2'));
+              leftLine.setAttribute('x2', 1 + +leftLine.getAttribute('x2'));
+              if (leftCount++ > 75)
+                  window.clearInterval(leftInterval);
+          }, 50);
+
+      </script>
   </div>
 
   <% @game.reviews.each do |review| %>
