@@ -10,6 +10,7 @@
           <%= cl_image_tag booking.game.photo %>
             <div class="results-card-description">
               <h1><%= link_to booking.game.name, booking_path(booking) %></h1>
+              <p><%= booking.status %></p>
             </div>
           </div>
         </div>
