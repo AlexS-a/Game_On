@@ -2,7 +2,7 @@
   <div class="container remove-margin">
   <h2 class="text-center">Here are all of your bookings...</h2>
     <div class="row">
-      <% if current_user.bookings.count > 1 %>
+      <% if current_user.bookings.count >= 1 %>
         <% current_user.bookings.each do |booking| %>
           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
             <%= link_to booking_path(booking) do %>
@@ -18,7 +18,7 @@
           <% end %>
           </div>
         <% end %>
-      <% else %>
+      <% elsif current_user.bookings.nil?  %>
         <%= link_to booking_path(current_user.bookings.first) do %>
             <div class="booking-cards">
               <div class="results-card">
@@ -30,7 +30,7 @@
               </div>
             </div>
           <% end %>
-        <% end %>
+        <% end %>>
     </div>
   </div>
   <p class="text-center returned"><%= link_to "To Games Search", games_path, class: "btn btn-primary" %></p>
