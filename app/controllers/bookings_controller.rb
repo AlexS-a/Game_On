@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :status_accept]
   def index
     @bookings = policy_scope(Booking)
   end
@@ -46,6 +46,22 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to bookings_path
+    authorize @booking
+  end
+
+  def status_accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to user_path(@booking.user)
+    authorize @booking
+  end
+
+  def status_decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "declined"
+    @booking.save
+    redirect_to user_path(@booking.user)
     authorize @booking
   end
 

@@ -77,8 +77,9 @@
 
           <div class="text-center">
             <p>
-              <%= link_to booking.user.user_name, user_path(booking.user) %> wants to rent <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %>
-
+              <%= link_to booking.user.user_name, user_path(booking.user) %> wants to rent <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %> <%= booking.status %>
+              <%= link_to "accept", accept_path(booking) %>
+              <%= link_to "decline", decline_path(booking) %>
               </p>
           </div>
         </div>
