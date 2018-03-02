@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-  GENRES = ['Survival', 'RPG' 'MMORPG', 'VRMMORPG' 'Puzzle', 'Beat em Up', 'Simulation', 'Racing', 'Sports', 'Fighting', 'Hack n Slash', 'Sandbox', 'Stealth', '
+  GENRES = ['Survival', 'RPG' 'MMORPG', 'VRMMORPG', 'Puzzle', 'Beat em Up', 'Simulation', 'Racing', 'Sports', 'Fighting', 'Hack n Slash', 'Sandbox', 'Stealth', '
 Tower Defense', 'Battle Royale', 'Horror']
   PLATFORMS = ['PS4' , 'XB1', 'Steam(PC)']
 
