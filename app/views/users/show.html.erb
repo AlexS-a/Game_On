@@ -1,20 +1,22 @@
 <div class="container">
-  <div class="row">
+
     <div class="col-xs-12 col-md-3">
 
       <div class="show-white-card text-center">
         <div class="card-show-header">
-          <h4><%= @user.user_name %></h4>
+          <h4 class="h4"><%= @user.user_name %></h4>
         </div>
           <% if  @user.photo.present? %>
             <div class="avatar-large" style="background-image: url('<%= cl_image_path @user.photo %>');">
+          <% else %>
+            <div class="avatar-large" style="background-image: url('https://www.vccircle.com/wp-content/uploads/2017/03/default-profile.png?w=300')">
           <% end %>
         </div>
       </div>
 
       <div class="show-white-card text-center">
         <div class="card-show-header">
-          <h4>About me</h4>
+          <h4 class="h4">About me</h4>
         </div>
         <div class="card-show-body">
           <p><%= @user.description %></p>
@@ -24,7 +26,7 @@
 
       <div class="show-white-card text-center">
         <div class="card-show-header">
-          <h4>Follow me</h4>
+          <h4 class="h4">Follow me</h4>
         </div>
         <div class="card-show-body">
           <a href="#">Facebook</a><br>
@@ -35,7 +37,7 @@
 
       <div class="show-white-card text-center">
         <div class="card-show-header">
-          <h4>Profile settings</h4>
+          <h4 class="h4">Profile settings</h4>
         </div>
         <div class="card-show-body">
           <%= link_to "Edit", edit_user_registration_path(@user) if @user == current_user%>
@@ -44,7 +46,7 @@
 
     </div>
     <div class="col-xs-12 col-sm-9">
-      <h3 class="text-white">These are your game up for rent</h3>
+      <h3 class="text-black">These are your game up for rent</h3>
       <div class="all-cards">
         <% @user.games.each do |game| %>
           <div class="card3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),  url(<%= cl_image_path game.photo %>);">
@@ -61,7 +63,7 @@
           </div>
         <% end %>
       </div>
-      <h3 class="text-white">People who have sent you a booking request</h3>
+      <h3 class="text-black">People who have sent you a booking request</h3>
 
       <% @user.games.each do |game| %>
         <% game.bookings.each do |booking| %>
@@ -70,23 +72,22 @@
 
           <div class="card-show-bottom">
             <span class="price">$<%= booking.game.price %></span>
-            <div>
-            </div>
-
           </div>
 
           <div class="text-center">
-            <p>
-              <%= link_to booking.user.user_name, user_path(booking.user) %> wants to rent <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %> <%= booking.status %>
-              <%= link_to "accept", accept_path(booking) %>
-              <%= link_to "decline", decline_path(booking) %>
-              </p>
+            <div style display: block;>
+              <p>
+                <%= link_to booking.user.user_name, user_path(booking.user) %> wants to rent <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %> <%= booking.status %>
+                <%= link_to "accept", accept_path(booking), class: "btn btn-success accept-button" %>
+                <%= link_to "decline", decline_path(booking),  class: "btn btn-danger decline" %>
+                </p>
+            </div>
           </div>
         </div>
         <% end %>
       <% end %>
     </div>
-  </div>
+
 </div>
 
 
