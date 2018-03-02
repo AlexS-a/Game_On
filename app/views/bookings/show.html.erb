@@ -11,11 +11,11 @@
         <div class="game-booked-details">
             <% num_days = @booking.rent_end - @booking.rent_start %>
             <% cost = num_days * (@booking.game.price.to_f / 7)%>
-            <h1>From <%= @booking.rent_start.strftime("%A %b %d, %Y") %></h1>
-            <h1>Till <%= @booking.rent_end.strftime("%A %b %d, %Y") %></h1>
+            <h1>From <%= @booking.rent_start.strftime("%A, %B %d, %Y") %></h1>
+            <h1>Till <%= @booking.rent_end.strftime("%A, %B %d, %Y") %></h1>
             <h1>For a total amount of £<%= cost.round(2) %></h1>
-            <%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %>
-            <%= @booking.status %>
+              <h2>User: <%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %></h2>
+              <h2>Status: <%= @booking.status %></h2>
         </div>
     </div>
   </div>
