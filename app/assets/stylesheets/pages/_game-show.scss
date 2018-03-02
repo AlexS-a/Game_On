@@ -34,8 +34,11 @@
       font-size: 24px;
     }
 
-    .btn-primary.game-show{
-      margin-left: 180px;
+    .btn-primary.rent-show{
+      margin-left: 23%;
+      padding-right: 42px;
+      padding-left: 42px;
+      font-weight: bold;
     }
   }
 
@@ -54,14 +57,22 @@
     }
 
     #platform-text{
-      font-weight:bold;
+      font-weight: bold;
       font-size: 18px;
     }
+  }
+
+  .location-name{
+    font-weight: bold;
+    font-size: 24px;
+    float: right;
+    margin-right: 38%;
   }
 }
 
 .back-to-search{
-  margin-top: 20px;
+  margin-top: 1%;
+  margin-left: 4.2%;
 }
 .reviews{
   text-align: center;
@@ -77,8 +88,10 @@
   float: left;
 }
 
-.fab {
-  font-size: 40px;
+#game-detail-icon {
+  opacity: 0.5;
+  margin-left: 36%;
+  font-size: 57px;
 }
 
 .game-flex{
@@ -87,6 +100,16 @@
   margin-top : 25px;
 
 }
+
+.show-links{
+  display: flex;
+  justify-content: space-between;
+
+  .rcreate-btn{
+    margin-top: 1%;
+  }
+}
+
 
 
 

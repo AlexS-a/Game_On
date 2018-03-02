@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
-  GENRES = ['Action/Shooter', 'Action/Platform', 'Action/Fighting', 'Action/BeatemUps']
+  GENRES = ['Survival', 'RPG' 'MMORPG', 'VRMMORPG', 'Puzzle', 'Beat em Up', 'Simulation', 'Racing', 'Sports', 'Fighting', 'Hack n Slash', 'Sandbox', 'Stealth', '
+Tower Defense', 'Battle Royale', 'Horror']
   PLATFORMS = ['PS4' , 'XB1', 'Steam(PC)']
 
   belongs_to :user
@@ -14,14 +15,14 @@ class Game < ApplicationRecord
   validates :location, presence: true
   validates :platform, presence: true
   mount_uploader :photo, PhotoUploader
-  
+
   include PgSearch
   pg_search_scope :global_search,
     against: [:name, :description, :genre, :location, :platform, :price],
     using: {
          tsearch: { prefix: true }
        }
-  
+
   def find_icon
     if self.platform == 'Steam(PC)'
       "fab fa-steam-symbol"
