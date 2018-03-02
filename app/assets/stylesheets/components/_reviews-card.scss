@@ -18,16 +18,28 @@
 
   .review-top{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     // padding-left: 12%;
 
     .left {
+      flex: 0 0 200px;
       display: flex;
+    }
+    .middle {
+      flex: 1 0 auto;
+      margin-left: 150px;
+    }
+    .right{
+      p{
+        padding-right: 0px;
+      }
+
+      .fa-star{
+        color: yellow;
+      }
     }
 
     h2{
-      text-align: center;
       font-size: 23px;
       color: black;
       margin-left: 0px;
@@ -58,9 +70,7 @@
       margin-bottom: 28px;
       // margin-right: 61%;
     }
-    .fa-star{
-      color: yellow;
-    }
+
     p{
       font-weight: bold;
     }
