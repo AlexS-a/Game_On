@@ -1,7 +1,16 @@
-<h1><%= current_user.user_name %></h1>
-<h2>Edit your description</h2>
+<div class="container">
+  <div class="user form">
+    <h1><%= current_user.user_name %></h1>
+    <h2>Edit your description or Add a photo!</h2>
 
-<%= simple_form_for current_user do |f| %>
-  <%= f.input :description %>
-  <%= f.submit%>
-<% end %>
+    <%= simple_form_for current_user do |f| %>
+      <%= f.input :description %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Change", class: "btn btn-success"%>
+    <% end %>
+
+    <%= link_to "Back", user_path(@user), class: "btn btn-primary form-back" %>
+  </div>
+</div>
+

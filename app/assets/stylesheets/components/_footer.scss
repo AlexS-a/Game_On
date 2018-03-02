@@ -22,6 +22,20 @@
       &:hover{
         opacity: 1;
       }
+
+      .social-media{
+         float: right;
+         letter-spacing: 10px;
+      }
+
+        .fa-facebook-f{
+          color: #3B5998;
+          padding: 0px 10px;
+        }
+        .fa-twitter{
+          color: #1dcaff;
+          padding-left: 3em;
+        }
   }
 }
 
