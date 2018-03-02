@@ -1,12 +1,23 @@
-<div class="booking-results">
+<div class="container booked" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)>)">
   <h1 class="text-center">Here are the booking details for <%= @booking.game.name %></h1>
-    <div class="booking-card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path("GTA.jpg", width: 800, height: 500, crop: :thumb) %>)">
-      <div class="booking-description">
-        <h1><%= @booking.rent_start %></h1>
-        <h1><%= @booking.rent_end %></h1>
-        <h1>For an an amount of £<%= @booking.game.price %> per week</h1>
-        <%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %>
-        <%= @booking.status %>
+<div class="game-holder">
+  <div class="booked-show">
+    <div class="results-card">
+      <%= cl_image_tag @booking.game.photo %>
       </div>
+        <div class="game-details">
+            <h1>From <%= @booking.rent_start %></h1>
+            <h1>till <%= @booking.rent_end %></h1>
+            <h1>For an amount of £<%= @booking.game.price %> per week</h1>
+            <%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %>
+            <%= @booking.status %>
+          <div class="icon-stuff">
+            <p id="platform-text">Platform:</p>
+            <p class="location">Location: <%= @booking.game.location %></p>
+          </div>
+        </div>
+      <div class="show-icon"><i class="<%= @booking.game.find_icon %>"></i></div>
     </div>
+  </div>
+</div>
 </div>

@@ -4,18 +4,20 @@
     <div class="row">
     <% current_user.bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-      <div class="booking-cards">
-        <div class="results-card">
-        <%= cl_image_tag booking.game.photo %>
-          <div class="results-card-description">
-            <h1><%= link_to booking.game.name, booking_path(booking)  %></h1>
+        <%= link_to booking_path(booking) do %>
+        <div class="booking-cards">
+          <div class="results-card">
+          <%= cl_image_tag booking.game.photo %>
+            <div class="results-card-description">
+              <h1><%= link_to booking.game.name, booking_path(booking) %></h1>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
       </div>
     <% end %>
     </div>
   </div>
-  <p class="text-center returned"><%= link_to "To games search page", games_path, class: "btn btn-primary" %></p>
+  <p class="text-center returned"><%= link_to "To Games Search", games_path, class: "btn btn-primary" %></p>
 </div>
 
