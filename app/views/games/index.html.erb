@@ -10,7 +10,6 @@
         <%= form_tag games_path, :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search], placeholder: 'Enter name' %>
-            <%= text_field_tag :search_location, params[:search_location], placeholder: 'Enter location' %>
             <%= submit_tag "Search", class: "search2", :name => nil %>
           </p>
         <% end %>
