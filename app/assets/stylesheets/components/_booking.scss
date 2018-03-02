@@ -69,10 +69,17 @@
   }
 }
 
-.game-details h1 {
-  color: #ffffff;
+.game-booked-details {
+  width: 400px;
+
+  h1{
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+  }
 }
 
 .icon-stuff p {
   color: #ffffff;
 }
+

@@ -8,7 +8,7 @@
 
       <p class="location"> From : <%= @booking.game.location %></p>
       </div>
-        <div class="game-details">
+        <div class="game-booked-details">
             <% num_days = @booking.rent_end - @booking.rent_start %>
             <% cost = num_days * (@booking.game.price.to_f / 7)%>
             <h1>From <%= @booking.rent_start.strftime("%A %b %d, %Y") %></h1>

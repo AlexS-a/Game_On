@@ -17,6 +17,7 @@
 .results-card {
   padding: 5px;
   // height: 530px;
+  justify-content: center;
   width: 210px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
   background-size: cover;
@@ -49,8 +50,6 @@
 }
 
 
-
-
 .results-card-description {
   width: 205px;
   // height: 250px;
@@ -79,10 +78,10 @@
   }
 }
 
-// .results-card img {
-//   height: 260px;
-//   width: 196px;
-// }
+.results-card img {
+  height: 260px;
+  width: 196px;
+}
 
 .results-card-link{
     background-color: transparent;
