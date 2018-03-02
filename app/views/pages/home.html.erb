@@ -2,8 +2,10 @@
       width: 300, height: 300, crop: :thumb) %>)">
   <div class="banner-content">
     <h1>Game On</h1>
-    <h3>Rent, Play, Complete, Repeat</h3>
-    <% if user_signed_in?  %>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+   <% if user_signed_in?  %>
     <% else %>
      <p style="margin-top: 40px;"><%= link_to "Sign up", new_user_registration_path, class:"btn-lg btn-primary" %></p>
     <% end %>
