@@ -6,10 +6,9 @@
         <div class="card-show-header">
           <h4><%= @user.user_name %></h4>
         </div>
-
-        <div class="avatar-large" style="background-image: url('<%= cl_image_path @user.photo %>');">
-<!--           <% @user.photo.present? %>
- -->
+          <% if  @user.photo.present? %>
+            <div class="avatar-large" style="background-image: url('<%= cl_image_path @user.photo %>');">
+          <% end %>
         </div>
       </div>
 

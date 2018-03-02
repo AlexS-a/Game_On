@@ -9,6 +9,8 @@
       <%= f.input :photo_cache, as: :hidden %>
       <%= f.submit "Change", class: "btn btn-success"%>
     <% end %>
+
+    <%= link_to "Back", user_path(@user), class: "btn btn-primary form-back" %>
   </div>
 </div>
 
