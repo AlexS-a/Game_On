@@ -71,17 +71,18 @@
           <h2><%= game.name %></h2>
 
           <div class="card-show-bottom">
-            <span class="price">$<%= booking.game.price %></span>
+           <span class="price">$<%= ((booking.game.price.to_f/7)*(booking.rent_end - booking.rent_start)).round(2) %></span>
           </div>
 
           <div class="text-center">
             <div style display: block;>
               <p>
-                <%= link_to booking.user.user_name, user_path(booking.user) %> wants to rent <%= booking.game.name %> for <%= booking.rent_start %> to <%= booking.rent_end %> <%= booking.status %>
+                <%= link_to booking.user.user_name, user_path(booking.user) %> wants to rent <%= booking.game.name %> for <%= booking.rent_start.strftime("%A, %b %d, %Y")%> to <%= booking.rent_end.strftime("%A, %b %d, %Y") %> <%= booking.status %>
                 <%= link_to "accept", accept_path(booking), class: "btn btn-success accept-button" %>
                 <%= link_to "decline", decline_path(booking),  class: "btn btn-danger decline" %>
                 </p>
             </div>
+
           </div>
         </div>
         <% end %>
