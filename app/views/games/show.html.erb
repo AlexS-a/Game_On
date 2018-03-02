@@ -37,14 +37,22 @@
 
 
   <div class="reviews">
-      <svg style="display: inline-block;" height="10" width="100">
+     <!--  <svg style="display: inline-block;" height="10" width="100">
         <line id='left-line' x1="10" y1="5" x2="5" y2="5" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+      </svg> -->
+      <svg id="line2" height='10' width='150'>
+          <path class="path2" fill="#BFBFBF" stroke-width="2" stroke="#BFBFBF" d="M150 0 L0 0"/>
       </svg>
       <h1 style="display: inline-block;">Reviews</h1>
-      <svg style="display: inline-block;" height="10" width="100">
-        <line id='right-line' x1="5" y1="5" x2="10" y2="5" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+      <svg id="line" height='10' width='150'>
+        <path class="path1" fill="#BFBFBF" stroke-width="2" stroke="#BFBFBF" d="M0 0 L150 0"/>
       </svg>
-      <script>
+     <!--  <svg style="display: inline-block;" height="10" width="100">
+        <line id='right-line' x1="5" y1="5" x2="10" y2="5" style="stroke:rgba(0,0,0,0.3);stroke-width:1" />
+      </svg> -->
+
+
+<!--       <script>
         const rightLine = document.getElementById('right-line');
         const rightCount = 0;
         const rightInterval = window.setInterval(function() {
@@ -63,7 +71,7 @@
                   window.clearInterval(leftInterval);
           }, 50);
 
-      </script>
+      </script> -->
   </div>
 
   <% @game.reviews.each do |review| %>

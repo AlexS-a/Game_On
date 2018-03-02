@@ -1,0 +1,41 @@
+#line {
+  display: inline-block !important;
+  margin: auto;
+}
+
+#line2 {
+  display: inline-block !important;
+  margin: auto;
+}
+
+
+.path1 {
+  stroke-dasharray: 150;
+/*   stroke-dashoffset: 800; */
+  animation: draw1 5s linear;
+}
+
+@keyframes draw1 {
+  from {
+    stroke-dashoffset: 150;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+.path2 {
+  stroke-dasharray: 150;
+/*   stroke-dashoffset: 800; */
+  animation: draw2 5s linear;
+}
+
+@keyframes draw2 {
+  from {
+    stroke-dashoffset: 150;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

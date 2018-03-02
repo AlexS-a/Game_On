@@ -8,7 +8,7 @@
 require 'faker'
 require 'open-uri'
 
-User.destroy_all
+# User.destroy_all
 
 # url = 'https://source.unsplash.com/collection/829192/1920x1080'
 
