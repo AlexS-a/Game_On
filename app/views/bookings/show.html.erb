@@ -1,23 +1,26 @@
 <div class="container booked" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%)>)">
-  <h1 class="text-center">Here are the booking details for <%= @booking.game.name %></h1>
+  <h1 class="text-center">Here are the booking details for <%= @booking.game.name.capitalize %></h1>
 <div class="game-holder">
   <div class="booked-show">
     <div class="results-card">
       <%= cl_image_tag @booking.game.photo %>
+      <div id="platform-text" class="show-icon"><i class="<%= @booking.game.find_icon %>"></i></div>
+
+      <p class="location"> From : <%= @booking.game.location %></p>
       </div>
-        <div class="game-details">
-            <h1>From <%= @booking.rent_start %></h1>
-            <h1>till <%= @booking.rent_end %></h1>
-            <h1>For an amount of £<%= @booking.game.price %> per week</h1>
+        <div class="game-booked-details">
+            <% num_days = @booking.rent_end - @booking.rent_start %>
+            <% cost = num_days * (@booking.game.price.to_f / 7)%>
+            <h1>From <%= @booking.rent_start.strftime("%A %b %d, %Y") %></h1>
+            <h1>Till <%= @booking.rent_end.strftime("%A %b %d, %Y") %></h1>
+            <h1>For a total amount of £<%= cost.round(2) %></h1>
             <%= link_to @booking.game.user.user_name, user_path(@booking.game.user) %>
             <%= @booking.status %>
-          <div class="icon-stuff">
-            <p id="platform-text">Platform:</p>
-            <p class="location">Location: <%= @booking.game.location %></p>
-          </div>
         </div>
-      <div class="show-icon"><i class="<%= @booking.game.find_icon %>"></i></div>
     </div>
   </div>
 </div>
+<p class="text-center"><%= link_to "Edit Booking", edit_game_booking_path(@booking), class: "btn btn-info" %></p>
+<p class="text-center"><%= link_to "Delete Booking", booking_path(@booking), method: :delete, class: "btn btn-danger" %></p>
 </div>
+
