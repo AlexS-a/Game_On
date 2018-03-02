@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :games, dependent: :destroy
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :reviews
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
